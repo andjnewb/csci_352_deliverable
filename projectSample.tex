@@ -141,13 +141,13 @@
 
 \begin{document}
 
-\title{Final Project Documentation Starter\\ for UTM CSCI 352}
+\title{Deliverable for our Weather App\\ for UTM CSCI 352}
 %
 %
 
 % received ..."  text while in non-compsoc journals this is reversed. Sigh.
 
-\author{Kathleen Ericson\\ (you'll need to take me out and put your names in here)% <-this % stops a space
+\author{Andrew Newbill, Joshua Chamberlain, Aaron Alden\\ % <-this % stops a space
 }
 
 \IEEEtitleabstractindextext{%
@@ -173,38 +173,44 @@ Abstracts are generally a very concise, short description of what you are writin
 
 
 
-Your introduction should give an introduction to your project.  What are you trying to accomplish (high level), who do you expect to target with your project?  What do you expect your target audience will get out of it?
+%Your introduction should give an introduction to your project.  What are you trying to %accomplish (high level), who do you expect to target with your project?  What do you expect %your target audience will get out of it?
 
-Should you need to cite anything, use the \emph{cite} keyword, and refer to something from your bibliography.  For example, this was put together with the help of a \LaTeX guide\cite{IEEEhowto:kopka}.
-
-
-Make sure that by the end of your introduction the reader knows what your project is and why you are doing it.
+%Should you need to cite anything, use the \emph{cite} keyword, and refer to something from your %bibliography.  For example, this was put together with the help of a \LaTeX guide%\cite{IEEEhowto:kopka}.
 
 
+%Make sure that by the end of your introduction the reader knows what your project is and why you are doing it.
 
-\subsection{Subsection Heading Here}
-Occasionally you need to break your sections into separate parts, you will likely not need a subsection for every section
+
+
+%\subsection{Subsection Heading Here}
+%Occasionally you need to break your sections into separate parts, you will likely not need a %subsection for every section
 
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 
-\subsubsection{Subsubsection Heading Here}
-Occasionally you will need to break your subsections into separate parts, if you find yourself using this often, you're likely going overboard.  Don't try to go any lower down than this. (And make sure you remove this!)
+%\subsubsection{Subsubsection Heading Here}
+%Occasionally you will need to break your subsections into separate parts, if you find yourself %using this often, you're likely going overboard.  Don't try to go any lower down than this. %(And make sure you remove this!)
 
 
 
 \subsection{Background}
-In this section, give a brief background to any concepts the reader may need to know to make it through your paper.   Are there any specific terms the reader needs to be familiar with?
+\subsubsection{Terms to Know}
+	The reader should be familiar with the general terms used to refer to various weather patterns. We plan to use a tiling system for this project. A tile in the context of our program will be a drag-able object that contains information on the weather for specific city or town.
+You will be able to organize these tiles with folders, which are simply containers for tiles. 
+\subsubsection{Personal Connection}	
+	 We came up with the idea for this project because most weather apps are integrated into operating systems and as such they have limited functionality for users who may travel between large areas or are simply interested in following the weather on a large scale. One strong inspiration was the recently unpredictable weather in Tennessee. It would be good for users working on the desktop to be able to check the weather as they work with a simple and fast app that does not run as a system service. 
+%In this section, give a brief background to any concepts the reader may need to know to make it %through your paper.   Are there any specific terms the reader needs to be familiar with?
 
-Also, consider going into your personal connection with this project -- why did you decide to do it?
+%Also, consider going into your personal connection with this project -- why did you decide to do %it?
 
 \subsection{Impacts}
-In this section, you should be attempting to judge the broader impact of your work, specifically impacts on: public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.  While your project likely does not have any impact on all of the above, try to consider and evaluate how your project will impact society and the world at large (even if only in a very small way).
+%In this section, you should be attempting to judge the broader impact of your work, %specifically impacts on: public health, safety, and welfare, as well as global, cultural, %social, environmental, and economic factors.  While your project likely does not have any %impact on all of the above, try to consider and evaluate how your project will impact society %and the world at large (even if only in a very small way).
+We hope that our project we impact the safety of its users in a positive way. A user could be working at their computer, blissfully unaware of a coming storm. We hope that our user would happen to check the app and decide not to leave their home on that day. This common situation could also impact the safety of the general public since more people on the road during a dangerous storm leads to a higher chance of accidents. It could happen that a social get-together that was planned gets canceled once one user sees coming poor weather and notifies their friends. We also hope that working on this project impacts us positively by furthering our experience at proposing projects and working as a group.  	
+
+
 
 \subsection{Challenges}
-For your first deliverable, this should be a list of where you believe you will get stuck -- what do you see as the most difficult portion of your project?
-
-As you overcome these challenges, this section becomes more of a retrospective: don't only identify the challenge, but also briefly outline the solution!
+	The first major challenge will be getting a C# WPF application to interact with the OpenWeather API. Once we can call the api and receive data the next major challenge will be organizing this data into something that is easy for the user to view and interpret. After that we will have to overcome the task of implementing 'tiles' that allow the user to organize more than one location's data. We plan to overcome the challenges by first reading the XML data into variables that can be married to fields in the tiles. Getting the data organized into something that is pleasant to view and organize will be by far the biggest challenge of this project. The free tier of OpenWeather does have certain limitations
 
 
 \section{Scope}
