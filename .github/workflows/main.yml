@@ -10,6 +10,6 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: projectSample.tex
-          args: -f -diagnostics
+          args: -f -halt-on-error-
         
         
