@@ -11,5 +11,6 @@ jobs:
         with:
           root_file: projectSample.tex
           args: -f -halt-on-error-
+          extra_system_packages: hyperref enumitem
         
         
