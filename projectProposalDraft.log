@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.12)  6 FEB 2022 22:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.12)  28 FEB 2022 12:55
 entering extended mode
 **projectSample.tex
 (projectProposalDraft.tex
@@ -292,8 +292,7 @@ ftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count270
 \l__pdf_internal_box=\box50
-)
-No file projectProposalDraft.aux.
+) (projectProposalDraft.aux)
 \openout1 = `projectProposalDraft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
@@ -312,6 +311,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
+
 -- Lines per column: 58 (exact).
 Package hyperref Info: Link coloring OFF on input line 142.
 (C:\Users\Andrew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
@@ -329,6 +329,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 142.
 LaTeX Info: Redefining \pageref on input line 142.
 LaTeX Info: Redefining \nameref on input line 142.
+ (projectProposalDraft.out) (projectProposalDraft.out)
 \@outlinefile=\write3
 \openout3 = `projectProposalDraft.out'.
 
@@ -369,11 +370,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7.0262> on input line 226.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.01874> on input line 226.
-
-
-LaTeX Warning: Reference `tab:useCaseIndex' on page 2 undefined on input line 2
-40.
-
 LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 247.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8.03> on input line 247.
@@ -383,27 +379,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <4.015> on input line 247.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
 87.
+
 (C:\Users\Andrew\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-
-LaTeX Warning: Reference `cat1' on page 2 undefined on input line 287.
-
-<cat1.jpg, id=17, 622.325pt x 388.45125pt>
+<cat1.jpg, id=88, 622.325pt x 388.45125pt>
 File: cat1.jpg Graphic file (type jpg)
 <use cat1.jpg>
 Package pdftex.def Info: cat1.jpg  used on input line 301.
 (pdftex.def)             Requested size: 351.3199pt x 250.94328pt.
+
 [2]
-
-LaTeX Warning: Reference `cat2' on page 3 undefined on input line 320.
-
-<cat2.jpg, id=36, 236.885pt x 200.75pt>
+<cat2.jpg, id=105, 236.885pt x 200.75pt>
 File: cat2.jpg Graphic file (type jpg)
 <use cat2.jpg>
 Package pdftex.def Info: cat2.jpg  used on input line 323.
 (pdftex.def)             Requested size: 355.32661pt x 301.12424pt.
-[3 <./cat1.jpg>]
+ [3 <./cat1.jpg>]
 ** WARNING: \IEEEbiography is locked out when in conference mode (line 354).
 ** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 3
 59).
@@ -419,26 +411,14 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [4 <./cat2.jpg>] (projectProposalDraft.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `projectProposalDraft.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `projectProposalDraft.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  00636F2ADD37105EE5D9EEE4FFB561FF;1128.
+Package rerunfilecheck Info: File `projectProposalDraft.out' has not changed.
+(rerunfilecheck)             Checksum: 00636F2ADD37105EE5D9EEE4FFB561FF;1128.
  ) 
 Here is how much of TeX's memory you used:
- 6494 strings out of 479618
- 106892 string characters out of 2864551
- 413097 words of memory out of 3000000
- 23543 multiletter control sequences out of 15000+200000
+ 6520 strings out of 479618
+ 107390 string characters out of 2864551
+ 413547 words of memory out of 3000000
+ 23563 multiletter control sequences out of 15000+200000
  442919 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,7n,74p,849b,400s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -449,9 +429,9 @@ crr8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmb8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times
 /utmr8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on projectProposalDraft.pdf (4 pages, 129480 bytes).
+Output written on projectProposalDraft.pdf (4 pages, 134247 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  34 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
