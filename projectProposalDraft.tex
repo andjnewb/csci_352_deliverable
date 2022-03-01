@@ -237,7 +237,7 @@ The requirements were acquired with all of us talking in class about the functio
 \begin{itemize}
 \item Privacy - The user's current location will be protected and not given to any third parties. The user will have an option to not allow the app to track their location.
 \item Reliability - The app will work with a proper internet connection.
-\item Capacity - The app will have teh same capacity as the storage on the computer i.e. The user will be able to have as many locations as their phone or computer can fit.
+\item Capacity - The app will have the same capacity as the storage on the computer i.e. The user will be able to have as many locations as their phone or computer can fit.
 \end{itemize}
 
 \subsection{Use Cases}
@@ -245,69 +245,61 @@ This subsection is arguably part of how you define your project scope (why it is
 
 You should have a table listing all use cases discussed in the document, the ID is just the order it is listed in, the name should be indicative of what should happen, the primary actor is typically most important in an application where you may have different levels of users (think admin vs normal user), complexity is a best-guess on your part as to how hard it should be.  A lower number in priority indicates that it needs to happen sooner rather than later.  A sample table, or Use Case Index can be seen in Table \ref{tab:useCaseIndex}.
 
-
-
-
 \begin{table}
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline \hline
-1 & Add item to cart & Shopper & Med & 1\\
+1 & Set location & Application user & Med & 1\\
 \hline
-2 & Checkout & Shopper & Med & 1\\
+2 & Add Favorites & Application user & Low & 2\\
+\hline
+3 & Search Location's weather & Application user & Med & 3\\
 \hline
 
 \end{tabular}
-\caption{Sample use case table}
+\caption{UltraWeather 1st draft use case table}
 \label{tab:useCaseIndex}
 \end{table}
 
-
 \begin{itemize}
 \item[Use Case Number:] 1
-\item[Use Case Name:] Add item to cart
-\item[Description:] A shopper on our site has identified an item they wish to buy.  They will click on a ``Add to Cart" button.  This will kick off a process to add one instance of the item to their cart.
+\item[Use Case Name:] Set location
+\item[Description:] Upon opening the application, the user will have the option to set their current location, i.e. ``Use current location". The user will then be presented with the weather forecast for the provided location.
 \end{itemize}
 
-You will then go on to (minimally) discuss a basic flow for the process:
-
 \begin{enumerate}
-\item User navigates to page listing desired item
-\item User left-clicks on ``Add to Cart" button.
-\item User cart is updated to reflect the new item, this also updates the current total.
-\item[Termination Outcome:] The user now has a single instance of the item in their cart.
+\item If the user wishes the application to find their location, they will click on the alert that the application is trying to access their location (whatever device they are on will handle this message differently).
+\item If the user wishes to set their home location manually, they can enter their zip code into a ``Set your location" menu option.
+\item[Termination Outcome:] The user now has access to their ``home" location's weather. Making it readily available whenever they access the application.
 \end{enumerate}
-
-You may need to also add in any alternative flows:
-
-Alternative: Item already exists in the cart
-\begin{enumerate}
-\item User navigates to page listing desired item
-\item User left-clicks on ``Add to Cart" button.
-\item User cart is updated to reflect the new item, showing that one more instance of the existing item has been added.  This also updates the current total.
-\item[Termination Outcome:] The user now has multiple instances of the item in their cart.
-\end{enumerate}
-
-You will often also need to include pictures or diagrams.  It is quite common to see use-case diagrams in such write-ups.  To properly reference an image, you will need to use the \texttt{figure} environment and will need to reference it in your text (via the \texttt{ref} command) (see Figure \ref{cat1}).  NOTE: this is not a use case diagram, but a kitten.
-
-After fully describing a use case, it is time to move on to the next use case:
 
 \begin{itemize}
 \item[Use Case Number:] 2
-\item[Use Case Name:] Checkout
-\item[Description:] A shopper on our site has finished shopping.  They will click on a ``Checkout" button.  This will kick off a process to calculate cart total, any taxes, shipping rates, and collect payment from the shopper.
-
+\item[Use Case Name:] Add favorites
+\item[Description:] The user can store favorite places to readily see what the weather is for these saved locations. They will be collected all in one place.
 \end{itemize}
 
-You will then need to continue to flesh out all use cases you have identified for your project.
+\begin{enumerate}
+\item The user will navigate to ``Add favorites" section.
+\item The user will type in the zip code for desired location.
+\item The user will have the option to save as a favorite to be readily available to view.
+\item[Termination Outcome:] A collection of saved favorite locations will be stored in the application.
+\end{enumerate}
 
-\begin{figure}[ht!]
-\includegraphics[height=250px, width=350px]{cat1.jpg}
-\caption{First picture, this is a kitten, not a use case diagram}
-\label{cat1}
-\end{figure}
+\begin{itemize}
+\item[Use Case Number:] 3
+\item[Use Case Name:] Search Location's weather
+\item[Description:] The user will have the option to search for a location's weather by location (zip code). The application will then show them the current weather forecast for the searched location. 
+\end{itemize}
+
+\begin{enumerate}
+\item The user will type in the desired zip code in the ``Search" bar.
+\item The application will present the current weather forecast.
+\item The user can search for new locations in the search bar if desired. 
+\item[Termination Outcome:] The user can now interact with all features of the application regarding this location.
+\end{enumerate}
 
 \subsection{Interface Mockups}
 At first, this will largely be completely made up, as you get further along in your project, and closer to a final product, this will typically become simple screenshots of your running application.
