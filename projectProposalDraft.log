@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.12)  28 FEB 2022 13:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.12)  1 MAR 2022 18:22
 entering extended mode
 **projectSample.tex
 (projectProposalDraft.tex
@@ -363,41 +363,37 @@ File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 [1{C:/Users/Andrew/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 22
-7.
+9.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.03749> on input line 227.
+(Font)              <10.03749> on input line 229.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.0262> on input line 227.
+(Font)              <7.0262> on input line 229.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.01874> on input line 227.
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 253.
+(Font)              <5.01874> on input line 229.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 252.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8.03> on input line 253.
+(Font)              <8.03> on input line 252.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.62097> on input line 253.
+(Font)              <5.62097> on input line 252.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.015> on input line 253.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-93.
+(Font)              <4.015> on input line 252.
+ [2]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3
+20.
 
 (C:\Users\Andrew\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-[2]
-<cat1.jpg, id=103, 622.325pt x 388.45125pt>
-File: cat1.jpg Graphic file (type jpg)
-<use cat1.jpg>
-Package pdftex.def Info: cat1.jpg  used on input line 307.
-(pdftex.def)             Requested size: 351.3199pt x 250.94328pt.
-<cat2.jpg, id=105, 236.885pt x 200.75pt>
+<cat2.jpg, id=95, 236.885pt x 200.75pt>
 File: cat2.jpg Graphic file (type jpg)
 <use cat2.jpg>
-Package pdftex.def Info: cat2.jpg  used on input line 329.
+Package pdftex.def Info: cat2.jpg  used on input line 323.
 (pdftex.def)             Requested size: 355.32661pt x 301.12424pt.
- [3 <./cat1.jpg>]
-** WARNING: \IEEEbiography is locked out when in conference mode (line 360).
+
+[3]
+** WARNING: \IEEEbiography is locked out when in conference mode (line 354).
 ** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 3
-65).
+59).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -414,13 +410,13 @@ Package rerunfilecheck Info: File `projectProposalDraft.out' has not changed.
 (rerunfilecheck)             Checksum: 00636F2ADD37105EE5D9EEE4FFB561FF;1128.
  ) 
 Here is how much of TeX's memory you used:
- 6520 strings out of 479618
- 107390 string characters out of 2864551
- 413547 words of memory out of 3000000
- 23563 multiletter control sequences out of 15000+200000
+ 6514 strings out of 479618
+ 107321 string characters out of 2864551
+ 412486 words of memory out of 3000000
+ 23557 multiletter control sequences out of 15000+200000
  442919 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,7n,74p,849b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,7n,74p,916b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C
 :/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
 y7.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/u
@@ -428,9 +424,9 @@ crr8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmb8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times
 /utmr8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on projectProposalDraft.pdf (4 pages, 134481 bytes).
+Output written on projectProposalDraft.pdf (4 pages, 87734 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
