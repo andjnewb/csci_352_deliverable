@@ -23,7 +23,13 @@ namespace Regular_Weather_Template
         public MainWindow()
         {
             InitializeComponent();
+            API_Container aPI_Container = new API_Container();
+            test_text.Text = aPI_Container.response;
         }
-        
+
+        private void test_text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
