@@ -1,0 +1,3 @@
+C:\Users\jospcham\source\repos\Cartoon Mode\Cartoon Mode\obj\Debug\netcoreapp3.1\Cartoon Mode.csproj.AssemblyReference.cache
+C:\Users\jospcham\source\repos\Cartoon Mode\Cartoon Mode\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\jospcham\source\repos\Cartoon Mode\Cartoon Mode\obj\Debug\netcoreapp3.1\Cartoon Mode_MarkupCompile.cache
