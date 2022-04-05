@@ -37,11 +37,11 @@ namespace Regular_Weather_Template
         {
             //TemperatureTextBlock.Text = container.call_api(CityNameTextBox.Text, "US-TN");
 
-            container.call_api(CityNameTextBox.Text, "US-TN");
+            City city = container.call_api(CityNameTextBox.Text, "US-TN");
 
-            XmlNodeList elemList = container.doc.GetElementsByTagName("temperature");
-            XmlAttributeCollection temperatureAttributes = elemList.Item(0).Attributes;
-            TemperatureTextBlock.Text = temperatureAttributes.Item(0).Value;
+            TemperatureTextBlock.Text = city.temperature.Item3;
+
+            
         }
     }
 }

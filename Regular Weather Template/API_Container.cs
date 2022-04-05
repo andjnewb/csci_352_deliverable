@@ -8,7 +8,17 @@ namespace Regular_Weather_Template
 {
     struct City
     {
-        
+        public Tuple<string, string> city;//ID and Name
+        public Tuple<string, string> coords;// Longitude and latitude
+        public Tuple<string, string> sunriseSunset;//sunrise and sunset
+        public Tuple<string, string, string> temperature;//Current temperature, minimum temperature, maximum temperature
+        public string humidity;
+        public string pressure;//in hPa
+        public string windSpeed;//in m/s
+        public string clouds;//Cloudy, clear sky etc
+        public string visibility;//In meters
+        public string precipiation;//Yes/no
+        public string lastUpdate;//Time of last update
     }
 
     class API_Container
@@ -28,13 +38,57 @@ namespace Regular_Weather_Template
 
         }
 
-        public string call_api(string cityName, string stateCode)
+        public City call_api(string cityName, string stateCode)
         {
             URL_string += cityName + "," + stateCode + "&mode=xml" + "&units=imperial" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
-            
+            try
+            {
+                doc.Load(@URL_string);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ERROR: " + e.Message);//We should probably return a blank city here or have a flag
+            }
 
-            doc.Load(@URL_string);
-            return URL_string;
+            City newCity = new City();
+
+            XmlElement root = doc.DocumentElement;
+
+            //Welcome to loop hell my friend.
+            foreach (XmlNode node in root.ChildNodes)
+            {
+                if (node.Name == "city")
+                {
+                    //The coordinate node and sunrise/sunset is a child of the city node, so we gotta do it this way.
+                    newCity.city = new Tuple<string, string>(node.Attributes["id"].Value,node.Attributes["name"].Value);
+
+                    foreach (XmlNode cityChild in node.ChildNodes)
+                    {
+                        if (cityChild.Name == "coord")
+                        {
+                            newCity.coords = new Tuple<string, string>(cityChild.Attributes["lon"].Value, cityChild.Attributes["lat"].Value);
+                        }
+
+                        if (cityChild.Name == "sun")
+                        {
+                            newCity.sunriseSunset = new Tuple<string, string>(cityChild.Attributes["rise"].Value, cityChild.Attributes["set"].Value);
+                        }
+
+
+                    }
+
+                }
+
+                if (node.Name == "temperature")
+                {
+                    newCity.temperature = new Tuple<string, string, string>(node.Attributes["value"].Value, node.Attributes["min"].Value, node.Attributes["max"].Value);
+                }
+
+
+            }
+
+
+            return newCity;
         }
 
         
