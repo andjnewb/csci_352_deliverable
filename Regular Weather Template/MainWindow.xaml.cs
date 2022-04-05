@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace Regular_Weather_Template
 {
@@ -25,9 +26,11 @@ namespace Regular_Weather_Template
             InitializeComponent();
             API_Container aPI_Container = new API_Container();
             aPI_Container.call_api();
-            test_text.Text = aPI_Container.doc.InnerText;
-        }
 
+            XmlNodeList elemList = aPI_Container.doc.GetElementsByTagName("city");
+            XmlAttributeCollection xmlAttributeList = elemList.Item(0).Attributes;
+            test_text.Text = xmlAttributeList.Count.ToString();
+        }
         private void test_text_TextChanged(object sender, TextChangedEventArgs e)
         {
 
