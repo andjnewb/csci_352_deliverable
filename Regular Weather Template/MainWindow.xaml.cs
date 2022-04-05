@@ -24,7 +24,8 @@ namespace Regular_Weather_Template
         {
             InitializeComponent();
             API_Container aPI_Container = new API_Container();
-            test_text.Text = aPI_Container.response;
+            aPI_Container.call_api();
+            test_text.Text = aPI_Container.doc.InnerText;
         }
 
         private void test_text_TextChanged(object sender, TextChangedEventArgs e)
