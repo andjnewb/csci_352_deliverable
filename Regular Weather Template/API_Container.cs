@@ -18,10 +18,6 @@ namespace Regular_Weather_Template
         string URL_string = @"https://api.openweathermap.org/data/2.5/weather?q=";
 
 
-
-
-
-
         public API_Container()
         {
             client = new WebClient();
