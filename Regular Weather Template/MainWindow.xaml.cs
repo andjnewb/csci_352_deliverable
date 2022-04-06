@@ -21,19 +21,27 @@ namespace Regular_Weather_Template
     /// </summary>
     public partial class MainWindow : Window
     {
+        API_Container container;
         public MainWindow()
         {
             InitializeComponent();
-            API_Container aPI_Container = new API_Container();
-            aPI_Container.call_api();
+            container = new API_Container();
+            //aPI_Container.call_api();
 
-            XmlNodeList elemList = aPI_Container.doc.GetElementsByTagName("city");
-            XmlAttributeCollection xmlAttributeList = elemList.Item(0).Attributes;
-            test_text.Text = xmlAttributeList.Count.ToString();
+           // XmlNodeList elemList = aPI_Container.doc.GetElementsByTagName("city");
+           // XmlAttributeCollection xmlAttributeList = elemList.Item(0).Attributes;
+            //test_text.Text = xmlAttributeList.Count.ToString();
         }
-        private void test_text_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //TemperatureTextBlock.Text = container.call_api(CityNameTextBox.Text, "US-TN");
+
+            container.call_api(CityNameTextBox.Text, "US-TN");
+
+            XmlNodeList elemList = container.doc.GetElementsByTagName("temperature");
+            XmlAttributeCollection temperatureAttributes = elemList.Item(0).Attributes;
+            TemperatureTextBlock.Text = temperatureAttributes.Item(0).Value;
         }
     }
 }

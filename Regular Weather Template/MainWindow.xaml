@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="Background" Background="#FF545E99">
-        <TextBox x:Name="test_text" HorizontalAlignment="Left" Margin="187,76,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="213" Height="141" TextChanged="test_text_TextChanged"/>
+        <ListBox x:Name="StateListBox" Margin="198,89,470,286">
+            <ListBoxItem x:Name="Tennessee" Content="US-TN" >
+            </ListBoxItem>
+        </ListBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="475,104,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox x:Name="CityNameTextBox" HorizontalAlignment="Left" Margin="58,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="TemperatureTextBlock" HorizontalAlignment="Left" Margin="281,0,0,0" Text="Temp" TextWrapping="Wrap" VerticalAlignment="Center"/>
     </Grid>
 </Window>
