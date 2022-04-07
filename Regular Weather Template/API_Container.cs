@@ -54,87 +54,98 @@ namespace Regular_Weather_Template
 
             XmlElement root = doc.DocumentElement;
 
-            //Welcome to loop hell my friend.
-            foreach (XmlNode node in root.ChildNodes)
+
+            if (root != null)
             {
-                if (node.Name == "city")
+                //Welcome to loop hell my friend.
+                foreach (XmlNode node in root.ChildNodes)
                 {
-                    //The coordinate node and sunrise/sunset is a child of the city node, so we gotta do it this way.
-                    newCity.city = new Tuple<string, string>(node.Attributes["id"].Value,node.Attributes["name"].Value);
-
-                    foreach (XmlNode cityChild in node.ChildNodes)
+                    if (node.Name == "city")
                     {
-                        if (cityChild.Name == "coord")
-                        {
-                            newCity.coords = new Tuple<string, string>(cityChild.Attributes["lon"].Value, cityChild.Attributes["lat"].Value);
-                        }
+                        //The coordinate node and sunrise/sunset is a child of the city node, so we gotta do it this way.
+                        newCity.city = new Tuple<string, string>(node.Attributes["id"].Value, node.Attributes["name"].Value);
 
-                        if (cityChild.Name == "sun")
+                        foreach (XmlNode cityChild in node.ChildNodes)
                         {
-                            newCity.sunriseSunset = new Tuple<string, string>(cityChild.Attributes["rise"].Value, cityChild.Attributes["set"].Value);
-                        }
+                            if (cityChild.Name == "coord")
+                            {
+                                newCity.coords = new Tuple<string, string>(cityChild.Attributes["lon"].Value, cityChild.Attributes["lat"].Value);
+                            }
 
+                            if (cityChild.Name == "sun")
+                            {
+                                newCity.sunriseSunset = new Tuple<string, string>(cityChild.Attributes["rise"].Value, cityChild.Attributes["set"].Value);
+                            }
+
+
+                        }
 
                     }
 
-                }
-
-                //Imperial units
-                if (node.Name == "temperature")
-                {
-                    newCity.temperature = new Tuple<string, string, string>(node.Attributes["value"].Value, node.Attributes["min"].Value, node.Attributes["max"].Value);
-                }
-
-                //In %
-                if (node.Name == "humidity")
-                {
-                    newCity.humidity = node.Attributes["value"].Value;
-                }
-
-                //hPa
-                if (node.Name == "pressure")
-                {
-                    newCity.pressure = node.Attributes["value"].Value;
-                }
-
-                //in m/s
-                if (node.Name == "wind")
-                {
-                    foreach (XmlNode child in node.ChildNodes)
+                    //Imperial units
+                    if (node.Name == "temperature")
                     {
-                        if (child.Name == "speed")
+                        newCity.temperature = new Tuple<string, string, string>(node.Attributes["value"].Value, node.Attributes["min"].Value, node.Attributes["max"].Value);
+                    }
+
+                    //In %
+                    if (node.Name == "humidity")
+                    {
+                        newCity.humidity = node.Attributes["value"].Value;
+                    }
+
+                    //hPa
+                    if (node.Name == "pressure")
+                    {
+                        newCity.pressure = node.Attributes["value"].Value;
+                    }
+
+                    //in m/s
+                    if (node.Name == "wind")
+                    {
+                        foreach (XmlNode child in node.ChildNodes)
                         {
-                            newCity.windSpeed = child.Attributes["value"].Value;
+                            if (child.Name == "speed")
+                            {
+                                newCity.windSpeed = child.Attributes["value"].Value;
+                            }
                         }
                     }
-                }
 
-                if (node.Name == "clouds")
-                {
-                    newCity.clouds = node.Attributes["name"].Value;
-                }
+                    if (node.Name == "clouds")
+                    {
+                        newCity.clouds = node.Attributes["name"].Value;
+                    }
 
-                //In meters
-                if (node.Name == "visibility")
-                {
-                    newCity.visibility = node.Attributes["value"].Value;
-                }
+                    //In meters
+                    if (node.Name == "visibility")
+                    {
+                        newCity.visibility = node.Attributes["value"].Value;
+                    }
 
-                //yes/no
-                if (node.Name == "precipitation")
-                {
-                    newCity.precipiation = node.Attributes["mode"].Value;
-                }
+                    //yes/no
+                    if (node.Name == "precipitation")
+                    {
+                        newCity.precipiation = node.Attributes["mode"].Value;
+                    }
 
-                //date followed by time
-                if (node.Name == "lastupdate")
-                {
-                    newCity.lastUpdate = node.Attributes["value"].Value;
-                }
+                    //date followed by time
+                    if (node.Name == "lastupdate")
+                    {
+                        newCity.lastUpdate = node.Attributes["value"].Value;
+                    }
 
+
+                }
 
             }
 
+            else 
+            {
+                newCity.lastUpdate = "-1";
+            }
+
+            doc = new XmlDocument();
 
             return newCity;
         }

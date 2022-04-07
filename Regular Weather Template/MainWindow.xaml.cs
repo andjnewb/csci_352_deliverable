@@ -40,6 +40,13 @@ namespace Regular_Weather_Template
             if (StateSelectionBox.Text != null && CityNameTextBox.Text.Length != 0)
             {
                 City city = container.call_api(CityNameTextBox.Text, StateSelectionBox.Text);
+
+                if (city.lastUpdate == "-1")
+                {
+                    return;
+                }
+
+
                 TemperatureTextBlock.Text = "Temp(fahrenheit):" + city.temperature.Item1;
                 CoordsTextBlock.Text = "Coordinates(longitude/latitude):" + city.coords.Item1 + ", " + city.coords.Item2;
                 SunriseSunset_TextBlock.Text = "Sunrise/Sunset:" + city.sunriseSunset.Item1 + "," + city.sunriseSunset.Item2;

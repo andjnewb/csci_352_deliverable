@@ -10,7 +10,7 @@
     <Grid x:Name="Background" Background="#FF545E99">
         <Button Content="Button" HorizontalAlignment="Left" Margin="475,104,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBox x:Name="CityNameTextBox" HorizontalAlignment="Left" Margin="85,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="TemperatureTextBlock" HorizontalAlignment="Left" Margin="14,78,0,0" Text="Temp(fahrenheit):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
+        <TextBlock x:Name="TemperatureTextBlock" HorizontalAlignment="Left" Margin="14,78,0,0" Text="Temp(fahrenheit):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
         <ComboBox x:Name="StateSelectionBox" HorizontalAlignment="Left" Margin="85,52,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <System:String>US-AL</System:String>
             <System:String>US-AK</System:String>
@@ -66,14 +66,14 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="14,51,0,0" Text="State" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="66"/>
         <TextBlock HorizontalAlignment="Left" Margin="14,29,0,0" Text="City" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="66"/>
-        <TextBlock x:Name="CoordsTextBlock" HorizontalAlignment="Left" Margin="14,94,0,0" Text="Coordinates(longitude/latitude):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="SunriseSunset_TextBlock" HorizontalAlignment="Left" Margin="14,111,0,0" Text="Sunrise/Sunset:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="Humidity_TextBlock" HorizontalAlignment="Left" Margin="14,127,0,0" Text="Humidity(%):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="PressureTextBlock" HorizontalAlignment="Left" Margin="14,143,0,0" Text="Pressure(hPa):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="WindSpeedTextBlock" HorizontalAlignment="Left" Margin="14,159,0,0" Text="Windspeed(m/s):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="CloudTextBlock" HorizontalAlignment="Left" Margin="14,175,0,0" Text="Clouds:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="VisibilityTextBlock" HorizontalAlignment="Left" Margin="14,191,0,0" Text="Visibility(meters):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="PrecipitationTextBlock" HorizontalAlignment="Left" Margin="14,207,0,0" Text="Precipitation:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
-        <TextBlock x:Name="LastUpdateTextBlock" HorizontalAlignment="Left" Margin="14,223,0,0" Text="Last Updated:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="175"/>
+        <TextBlock x:Name="CoordsTextBlock" HorizontalAlignment="Left" Margin="14,94,0,0" Text="Coordinates(longitude/latitude):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="SunriseSunset_TextBlock" HorizontalAlignment="Left" Margin="14,111,0,0" Text="Sunrise/Sunset:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="Humidity_TextBlock" HorizontalAlignment="Left" Margin="14,127,0,0" Text="Humidity(%):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="PressureTextBlock" HorizontalAlignment="Left" Margin="14,143,0,0" Text="Pressure(hPa):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="WindSpeedTextBlock" HorizontalAlignment="Left" Margin="14,159,0,0" Text="Windspeed(m/s):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="CloudTextBlock" HorizontalAlignment="Left" Margin="14,175,0,0" Text="Clouds:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="VisibilityTextBlock" HorizontalAlignment="Left" Margin="14,191,0,0" Text="Visibility(meters):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="PrecipitationTextBlock" HorizontalAlignment="Left" Margin="14,207,0,0" Text="Precipitation:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
+        <TextBlock x:Name="LastUpdateTextBlock" HorizontalAlignment="Left" Margin="14,223,0,0" Text="Last Updated:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.243,0.441" Width="386"/>
     </Grid>
 </Window>
