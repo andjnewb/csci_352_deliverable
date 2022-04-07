@@ -79,9 +79,57 @@ namespace Regular_Weather_Template
 
                 }
 
+                //Imperial units
                 if (node.Name == "temperature")
                 {
                     newCity.temperature = new Tuple<string, string, string>(node.Attributes["value"].Value, node.Attributes["min"].Value, node.Attributes["max"].Value);
+                }
+
+                //In %
+                if (node.Name == "humidity")
+                {
+                    newCity.humidity = node.Attributes["value"].Value;
+                }
+
+                //hPa
+                if (node.Name == "pressure")
+                {
+                    newCity.pressure = node.Attributes["value"].Value;
+                }
+
+                //in m/s
+                if (node.Name == "wind")
+                {
+                    foreach (XmlNode child in node.ChildNodes)
+                    {
+                        if (child.Name == "speed")
+                        {
+                            newCity.windSpeed = child.Attributes["value"].Value;
+                        }
+                    }
+                }
+
+                if (node.Name == "clouds")
+                {
+                    newCity.clouds = node.Attributes["name"].Value;
+                }
+
+                //In meters
+                if (node.Name == "visibility")
+                {
+                    newCity.visibility = node.Attributes["value"].Value;
+                }
+
+                //yes/no
+                if (node.Name == "precipitation")
+                {
+                    newCity.precipiation = node.Attributes["mode"].Value;
+                }
+
+                //date followed by time
+                if (node.Name == "lastupdate")
+                {
+                    newCity.lastUpdate = node.Attributes["value"].Value;
                 }
 
 
