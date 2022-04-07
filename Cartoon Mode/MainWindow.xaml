@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cartoon_Mode"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1050" Width="1400">
+        Title="MainWindow" Height="1050" Width="1900">
     <Grid x:Name="Background" Background= "LightSkyBlue">
         <Grid Margin="621,121,140,354">
             <Grid.ColumnDefinitions>
@@ -14,53 +14,50 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition>
+                <RowDefinition Height="292*">
                 </RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="267*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock TextWrapping="Wrap" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFDF9F9" Margin="0,0,0,279" Grid.RowSpan="2"><Run Text="Humidity"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="79%"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFDF9F9" Margin="-7,6,10,241" Grid.RowSpan="2"><Run Text="Humidity"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="79%"/></TextBlock>
             <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Sunrise"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="7:25 AM"/></TextBlock>
-            <Grid Grid.Column="1">
-                <Image Margin="1,70,10,71" Stretch="Fill" Source="Images/Sunrise.png"/>
-            </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="0" Foreground="White" FontSize="34" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,279" Grid.RowSpan="2" Text="Feel Like Temperature&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;90°"/>
+
+            <Image Margin="37,68,37,68" Stretch="Fill" Source="/Images/Sunrise.png" Grid.Column="1"/>
+            <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="0" Foreground="White" FontSize="34" FontWeight="Bold" TextAlignment="Center" Margin="379,0,0,8" Grid.ColumnSpan="2"><Run Text="Feel Like Temperature "/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="90°"/></TextBlock>
             <Grid Grid.Column="2" Margin="35,94,35,48">
-                <Image Stretch="Fill" Source="Images/Feel_Like.png" RenderTransformOrigin="0.5,0.5"/>
+                <Image Stretch="Fill" Source="/Images/Feel_Like.png" RenderTransformOrigin="0.5,0.5" Margin="54,-30,54,10"/>
             </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Visibility"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="10 Miles"/></TextBlock>
-            <Grid Margin="8,33,0,33" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Grid.Column="0" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,288,379,0" Grid.RowSpan="2"><Run Text="Visibility"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="10 Miles"/></TextBlock>
+            <Grid Margin="8,33,379,33" Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid>
-                    <Image Stretch="Fill" Source="Images/Visibility.png" Margin="0,10,0,0"/>
+                    <Image Stretch="Fill" Source="/Images/Visibility.png" Margin="64,0,64,24"/>
                 </Grid>
             </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FontSize="36" TextAlignment="Center" Foreground="White"><Run Text="Sunset"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="6:59 PM"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Grid.Column="1" FontWeight="Bold" FontSize="36" TextAlignment="Center" Foreground="White" Margin="0,288,0,0" Grid.RowSpan="2"><Run Text="Sunset"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="6:59 PM"/></TextBlock>
             <Grid Grid.Column="1" Margin="17,61,8,61" Grid.Row="1">
-                <Image Stretch="Fill" Source="Images/Sunset.png"/>
+                <Image Stretch="Fill" Source="/Images/Sunset.png" Margin="81,-10,81,10"/>
             </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="5,0,-5,-1" Foreground="White"><Run Text="Pressure"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="29.12 inHg"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Grid.Column="2" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="5,288,-5,-1" Foreground="White" Grid.RowSpan="2"><Run Text="Pressure"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="29.12 inHg"/></TextBlock>
             <Grid Grid.Column="2" Margin="19,45,19,61" Grid.Row="1">
                 <Grid>
-                    <Image Stretch="Fill" Source="Images/Barometer.png"/>
+                    <Image Stretch="Fill" Source="/Images/Barometer.png" Margin="82,0,83,10"/>
                 </Grid>
             </Grid>
-            <Grid Margin="17,76,17,77">
-                <Grid>
-                    <Image Stretch="Fill" Source="Images/Humidity.png" Grid.Column="0" Grid.Row="0"/>
+            <Image Stretch="Fill" Source="/Images/Humidity.png" Grid.Column="0" Grid.Row="0" Margin="54,56,59,63"/>
 
-                </Grid>
 
-            </Grid>
+
+
 
         </Grid>
-        <Grid Margin="25,18,896,300">
+        <Grid Margin="-205,28,1126,290">
             <Grid.RowDefinitions>
                 <RowDefinition Height="120*"></RowDefinition>
                 <RowDefinition Height="59*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Text="Martin, TN" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFBF9F9" Grid.Row="0" RenderTransformOrigin="0.5,0.5">
+            <TextBlock Text="Martin, TN" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFBF9F9" Grid.Row="0" RenderTransformOrigin="0.5,0.5" Margin="0,0,10,0">
 
             </TextBlock>
-            <Image Margin="59,119,74,57" Stretch="Fill" Source ="Images/Sun.png" Grid.Row="0"/>
+            <Image Margin="59,119,74,57" Stretch="Fill" Source ="/Images/Sun.png" Grid.Row="0" StretchDirection="Both" Width="346" Height="304"/>
             <TextBlock Text="87°" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White" Margin="0,480,0,0" Grid.RowSpan="2"/>
 
         </Grid>
@@ -78,25 +75,24 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Margin="16,12,16,10" Stretch="Fill" Source="Images/Rain.png" RenderTransformOrigin="0.494,0.572" Grid.Row="0" Grid.Column="0"/>
+            <Image Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" RenderTransformOrigin="0.494,0.572" Grid.Row="0" Grid.Column="0"/>
             <TextBlock Text="79°/85°" TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" TextAlignment="Center" FontSize="48" Foreground="White" FontWeight="Bold"/>
-            <Image Margin="182,0,182,135" Stretch="Fill" Source="Images/ThunderStorm.png" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            </Image>
+            <Image Margin="34,5,34,4" Stretch="Fill" Source="/Images/ThunderStorm.png" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
             <TextBlock Text="76°/79°" TextWrapping="Wrap" Grid.Row="1" FontSize="48" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="3" Margin="182,0,182,0" FontWeight="Bold"/>
-            <Image Grid.Column="2" Margin="2,0,2,135" Stretch="Fill" Source="Images/PartlyCloudy.png" Grid.RowSpan="2"/>
+            <Image Grid.Column="2" Margin="26,0,26,135" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.RowSpan="2"/>
             <TextBlock Text="81°/91°" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Foreground="White" FontSize="48" TextAlignment="Center" FontWeight="Bold"/>
-            <Image Grid.Column="3" Margin="22,10,22,12" Stretch="Fill" Source="Images/Sun.png"/>
+            <Image Grid.Column="3" Margin="57,-2,57,10" Stretch="Fill" Source="/Images/Sun.png"/>
             <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="1" Text="90°/95°" Foreground="White" FontSize="48" FontWeight="Bold" TextAlignment="Center"/>
-            <Image Grid.Column="4" Margin="10,4,10,4" Stretch="Fill" Source="Images/Rain.png"/>
+            <Image Grid.Column="4" Margin="26,6,26,2" Stretch="Fill" Source="/Images/Rain.png"/>
             <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" FontSize="48" FontWeight="Bold" Text="80°/85°" TextAlignment="Center" Foreground="White"/>
-            <Image Grid.Column="5" Margin="5,0,4,4" Stretch="Fill" Source="Images/Rain.png"/>
+            <Image Grid.Column="5" Margin="40,4,39,135" Stretch="Fill" Source="/Images/Rain.png" Grid.RowSpan="2"/>
             <TextBlock Text="78°/85°" TextWrapping="Wrap" Grid.Column="5" Grid.Row="1" FontSize="48" FontWeight="Bold" Margin="0,1,0,-1" TextAlignment="Center" Foreground="White"/>
-            <Image Margin="182,-2,1,2" Stretch="Fill" Source="Images/PartlyCloudy.png" Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="2"/>
+            <Image Margin="10,-2,1,2" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.Column="6" Grid.Row="0"/>
             <TextBlock Text="87°/92°" TextWrapping="Wrap" Grid.Column="7" Grid.Row="1" FontSize="48" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
 
 
         </Grid>
-        <Grid Margin="509,34,79,927">
+        <Grid Margin="509,44,79,917">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -110,10 +106,10 @@
                 <ComboBoxItem Content="Emoji Mode"/>
                 <ComboBoxItem Content="Christmas Mode"/>
             </ComboBox>
-            <TextBlock HorizontalAlignment="Center" Text="Mode Selector" TextWrapping="Wrap" VerticalAlignment="Center" Height="73" Width="102" FontSize="24" Foreground="White"/>
+            <TextBlock HorizontalAlignment="Center" Text="Mode Selector" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="218" FontSize="24" Foreground="White" TextAlignment="Center" Margin="0,11,0,0"/>
             <TextBlock TextWrapping="Wrap" Grid.Column="2" FontSize="24" Foreground="White" TextAlignment="Center" Text="City:"/>
             <TextBox Grid.Column="3" HorizontalAlignment="Center" Height="22" Margin="0,21,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="State:" TextWrapping="Wrap" VerticalAlignment="Center" Height="73" Width="136" Foreground="White" FontSize="24" TextAlignment="Center"/>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="State:" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="219" Foreground="White" FontSize="24" TextAlignment="Center" Margin="0,11,0,0"/>
             <ComboBox Grid.Column="5" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="135" IsReadOnly="True">
                 <ComboBoxItem Content="US-AK"/>
                 <ComboBoxItem Content="US-AL"/>

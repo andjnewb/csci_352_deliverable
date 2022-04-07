@@ -5,16 +5,63 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Cartoon_Mode</RootNamespace>
     <UseWPF>true</UseWPF>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Barometer.png" />
+    <None Remove="Humidity.png" />
+    <None Remove="Images\Barometer.png" />
+    <None Remove="Images\Feel_Like.png" />
+    <None Remove="Images\Humidity.png" />
+    <None Remove="Images\PartlyCloudy.png" />
+    <None Remove="Images\Rain.png" />
+    <None Remove="Images\Sun.png" />
+    <None Remove="Images\Sunrise.png" />
+    <None Remove="Images\Sunset.png" />
+    <None Remove="Images\ThunderStorm.png" />
+    <None Remove="Images\Visibility.png" />
+    <None Remove="Smile.png" />
+    <None Remove="Sun.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Barometer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Humidity.png" />
+    <Resource Include="Images\Barometer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Feel_Like.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Humidity.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PartlyCloudy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Rain.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Sun.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Sunrise.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Sunset.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ThunderStorm.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Visibility.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Smile.png" />
+    <Resource Include="Sun.png" />
   </ItemGroup>
 
 </Project>
