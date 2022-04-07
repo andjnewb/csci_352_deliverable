@@ -15,6 +15,54 @@
             <System:String>US-AL</System:String>
             <System:String>US-AK</System:String>
             <System:String>US-AZ</System:String>
+            <System:String>US-AR</System:String>
+            <System:String>US-CA</System:String>
+            <System:String>US-CO</System:String>
+            <System:String>US-CT</System:String>
+            <System:String>US-DE</System:String>
+            <System:String>US-FL</System:String>
+            <System:String>US-GA</System:String>
+            <System:String>US-HI</System:String>
+            <System:String>US-ID</System:String>
+            <System:String>US-IL</System:String>
+            <System:String>US-IN</System:String>
+            <System:String>US-IA</System:String>
+            <System:String>US-KS</System:String>
+            <System:String>US-KY</System:String>
+            <System:String>US-LA</System:String>
+            <System:String>US-ME</System:String>
+            <System:String>US-MD</System:String>
+            <System:String>US-MA</System:String>
+            <System:String>US-MI</System:String>
+            <System:String>US-MN</System:String>
+            <System:String>US-MS</System:String>
+            <System:String>US-MO</System:String>
+            <System:String>US-MT</System:String>
+            <System:String>US-NE</System:String>
+            <System:String>US-NV</System:String>
+            <System:String>US-NH</System:String>
+            <System:String>US-NJ</System:String>
+            <System:String>US-NM</System:String>
+            <System:String>US-NY</System:String>
+            <System:String>US-NC</System:String>
+            <System:String>US-ND</System:String>
+            <System:String>US-OH</System:String>
+            <System:String>US-OK</System:String>
+            <System:String>US-OR</System:String>
+            <System:String>US-PA</System:String>
+            <System:String>US-RI</System:String>
+            <System:String>US-SC</System:String>
+            <System:String>US-SD</System:String>
+            <System:String>US-TN</System:String>
+            <System:String>US-TX</System:String>
+            <System:String>US-UT</System:String>
+            <System:String>US-VT</System:String>
+            <System:String>US-VA</System:String>
+            <System:String>US-WA</System:String>
+            <System:String>US-WV</System:String>
+            <System:String>US-WI</System:String>
+            <System:String>US-WY</System:String>
+            <System:String>US-DC</System:String>
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="14,51,0,0" Text="State" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="66"/>
         <TextBlock HorizontalAlignment="Left" Margin="14,29,0,0" Text="City" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="66"/>
