@@ -4,7 +4,7 @@ using System.Text;
 using System.Net;
 using System.Xml;
 
-namespace Regular_Weather_Template
+namespace Cartoon_Mode
 {
     struct City
     {

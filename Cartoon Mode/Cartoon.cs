@@ -14,17 +14,14 @@ namespace Cartoon_Mode
     public class CartoonTheme : Theme
     {
         string CurrentWeatherSource;
-        string precipation;
         List<string> Forecast;
         public CartoonTheme()
         {
-            if (precipation == "Sunny")
-            {
-                CurrentWeatherSource = "/Images/Sun.png";
-            }
-                
+            
             
         }
+
+
 
         public string getSource()
         {

@@ -21,6 +21,10 @@ namespace Cartoon_Mode
     public partial class MainWindow : Window
     {
         Theme CurrentTheme;
+        City currentCity;
+        API_Container container;
+
+
         public MainWindow()
         {
             InitializeComponent();
