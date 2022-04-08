@@ -57,7 +57,7 @@
             <TextBlock Text="Martin, TN" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFBF9F9" Grid.Row="0" RenderTransformOrigin="0.5,0.5" Margin="0,0,10,0">
 
             </TextBlock>
-            <Image Margin="59,119,74,57" Stretch="Fill" Source ="/Images/Sun.png" Grid.Row="0" StretchDirection="Both" Width="346" Height="304"/>
+            <Image x:Name="CurrentWeatherImage" Margin="59,119,74,57" Stretch="Fill" Source ="/Images/Sun.png" Grid.Row="0" StretchDirection="Both" Width="346" Height="304"/>
             <TextBlock Text="87°" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White" Margin="0,480,0,0" Grid.RowSpan="2"/>
 
         </Grid>

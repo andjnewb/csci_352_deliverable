@@ -20,9 +20,12 @@ namespace Cartoon_Mode
     /// </summary>
     public partial class MainWindow : Window
     {
+        Theme CurrentTheme;
         public MainWindow()
         {
             InitializeComponent();
+            CurrentTheme = new CartoonTheme();
         }
+        
     }
 }
