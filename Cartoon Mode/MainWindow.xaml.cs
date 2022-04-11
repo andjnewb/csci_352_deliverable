@@ -29,7 +29,43 @@ namespace Cartoon_Mode
         {
             InitializeComponent();
             CurrentTheme = new CartoonTheme();
+            container = new API_Container();
         }
-        
+
+        private void GetCityInfo_Click(object sender, RoutedEventArgs e)
+        {
+            currentCity = container.call_api(CityText.Text, StateCode.Text);
+            CurrentTemp.Text = currentCity.temperature.Item1 + "°";
+            CurrentCityName.Text = currentCity.city.Item2;
+            Humidity.Text = currentCity.humidity + "%";
+            Sunrise.Text = currentCity.sunriseSunset.Item1 + " AM";
+            Sunset.Text = currentCity.sunriseSunset.Item2 + " PM";
+            if (Convert.ToInt32(currentCity.visibility) > 10000)
+            {
+                Visibility.Text = currentCity.visibility + "+ Meters";
+            }
+            else
+            {
+                Visibility.Text = currentCity.visibility + " Meters";
+            }
+            FeelTemp.Text = currentCity.temperature.Item1;
+            Pressure.Text = currentCity.pressure + "hPa";
+
+        }
+
+        private void ModeChanger_Click(object sender, RoutedEventArgs e)
+        {
+            if(ModeSelector.Text == "Cartoon Mode")
+            {
+                CurrentTheme = new CartoonTheme();
+            }else if(ModeSelector.Text == "Emoji Mode")
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a mode");
+            }
+        }
     }
 }

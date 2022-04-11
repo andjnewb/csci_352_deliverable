@@ -1,42 +1,42 @@
-﻿<Window x:Class="Cartoon_Mode.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cartoon_Mode"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="Cartoon_Mode.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="1050" Width="1900">
     <Grid x:Name="Background" Background= "LightSkyBlue">
         <Grid Margin="621,121,140,354">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="292*">
-                </RowDefinition>
-                <RowDefinition Height="267*"></RowDefinition>
+                <RowDefinition Height="292*"/>
+                <RowDefinition Height="267*"/>
             </Grid.RowDefinitions>
-            <TextBlock TextWrapping="Wrap" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFDF9F9" Margin="-7,6,10,241" Grid.RowSpan="2"><Run Text="Humidity"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="79%"/></TextBlock>
-            <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Sunrise"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="7:25 AM"/></TextBlock>
+            <TextBlock x:Name="Humidity" TextWrapping="Wrap" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFDF9F9" Margin="-7,6,10,241" Grid.RowSpan="2"><Run Text="Humidity"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="79%"/></TextBlock>
+            <TextBlock x:Name="Sunrise" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Sunrise"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="7:25 AM"/></TextBlock>
 
             <Image Margin="37,68,37,68" Stretch="Fill" Source="/Images/Sunrise.png" Grid.Column="1"/>
-            <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="0" Foreground="White" FontSize="34" FontWeight="Bold" TextAlignment="Center" Margin="379,0,0,8" Grid.ColumnSpan="2"><Run Text="Feel Like Temperature "/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="90°"/></TextBlock>
+            <TextBlock x:Name="FeelTemp" TextWrapping="Wrap" Grid.Column="1" Grid.Row="0" Foreground="White" FontSize="34" FontWeight="Bold" TextAlignment="Center" Margin="379,0,0,8" Grid.ColumnSpan="2"><Run Text="Feel Like Temperature "/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="90°"/></TextBlock>
             <Grid Grid.Column="2" Margin="35,94,35,48">
                 <Image Stretch="Fill" Source="/Images/Feel_Like.png" RenderTransformOrigin="0.5,0.5" Margin="54,-30,54,10"/>
             </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="0" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,288,379,0" Grid.RowSpan="2"><Run Text="Visibility"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="10 Miles"/></TextBlock>
+            <TextBlock x:Name="Visibility" TextWrapping="Wrap" Grid.Column="0" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,288,379,0" Grid.RowSpan="2"><Run Text="Visibility"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="10 Miles"/></TextBlock>
             <Grid Margin="8,33,379,33" Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid>
                     <Image Stretch="Fill" Source="/Images/Visibility.png" Margin="64,0,64,24"/>
                 </Grid>
             </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="1" FontWeight="Bold" FontSize="36" TextAlignment="Center" Foreground="White" Margin="0,288,0,0" Grid.RowSpan="2"><Run Text="Sunset"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="6:59 PM"/></TextBlock>
+            <TextBlock x:Name="Sunset" TextWrapping="Wrap" Grid.Column="1" FontWeight="Bold" FontSize="36" TextAlignment="Center" Foreground="White" Margin="0,288,0,0" Grid.RowSpan="2"><Run Text="Sunset"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="6:59 PM"/></TextBlock>
             <Grid Grid.Column="1" Margin="17,61,8,61" Grid.Row="1">
                 <Image Stretch="Fill" Source="/Images/Sunset.png" Margin="81,-10,81,10"/>
             </Grid>
-            <TextBlock TextWrapping="Wrap" Grid.Column="2" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="5,288,-5,-1" Foreground="White" Grid.RowSpan="2"><Run Text="Pressure"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="29.12 inHg"/></TextBlock>
+            <TextBlock x:Name="Pressure" TextWrapping="Wrap" Grid.Column="2" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="5,288,-5,-1" Foreground="White" Grid.RowSpan="2"><Run Text="Pressure"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="29.12 inHg"/></TextBlock>
             <Grid Grid.Column="2" Margin="19,45,19,61" Grid.Row="1">
                 <Grid>
                     <Image Stretch="Fill" Source="/Images/Barometer.png" Margin="82,0,83,10"/>
@@ -51,33 +51,31 @@
         </Grid>
         <Grid Margin="-205,28,1126,290">
             <Grid.RowDefinitions>
-                <RowDefinition Height="120*"></RowDefinition>
-                <RowDefinition Height="59*"></RowDefinition>
+                <RowDefinition Height="120*"/>
+                <RowDefinition Height="59*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Martin, TN" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFBF9F9" Grid.Row="0" RenderTransformOrigin="0.5,0.5" Margin="0,0,10,0">
-
-            </TextBlock>
+            <TextBlock x:Name="CurrentCityName" Text="Martin, TN" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FFFBF9F9" Grid.Row="0" RenderTransformOrigin="0.5,0.5" Margin="0,0,10,0"/>
             <Image x:Name="CurrentWeatherImage" Margin="59,119,74,57" Stretch="Fill" Source ="/Images/Sun.png" Grid.Row="0" StretchDirection="Both" Width="346" Height="304"/>
-            <TextBlock Text="87°" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White" Margin="0,480,0,0" Grid.RowSpan="2"/>
+            <TextBlock x:Name="CurrentTemp" Text="87°" TextWrapping="Wrap" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White" Margin="0,480,0,0" Grid.RowSpan="2"/>
 
         </Grid>
         <Grid Margin="43,734,80,29">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="182*"></ColumnDefinition>
-                <ColumnDefinition Width="182*"></ColumnDefinition>
-                <ColumnDefinition Width="182*"></ColumnDefinition>
-                <ColumnDefinition Width="182*"></ColumnDefinition>
-                <ColumnDefinition Width="182"></ColumnDefinition>
-                <ColumnDefinition Width="182*"></ColumnDefinition>
-                <ColumnDefinition Width="182*"></ColumnDefinition>
+                <ColumnDefinition Width="182*"/>
+                <ColumnDefinition Width="182*"/>
+                <ColumnDefinition Width="182*"/>
+                <ColumnDefinition Width="182*"/>
+                <ColumnDefinition Width="182"/>
+                <ColumnDefinition Width="182*"/>
+                <ColumnDefinition Width="182*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Image Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" RenderTransformOrigin="0.494,0.572" Grid.Row="0" Grid.Column="0"/>
             <TextBlock Text="79°/85°" TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" TextAlignment="Center" FontSize="48" Foreground="White" FontWeight="Bold"/>
-            <Image Margin="34,5,34,4" Stretch="Fill" Source="/Images/ThunderStorm.png" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <Image Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" Grid.Column="1" Grid.Row="0"/>
             <TextBlock Text="76°/79°" TextWrapping="Wrap" Grid.Row="1" FontSize="48" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="3" Margin="182,0,182,0" FontWeight="Bold"/>
             <Image Grid.Column="2" Margin="26,0,26,135" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.RowSpan="2"/>
             <TextBlock Text="81°/91°" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Foreground="White" FontSize="48" TextAlignment="Center" FontWeight="Bold"/>
@@ -94,76 +92,80 @@
         </Grid>
         <Grid Margin="509,44,79,917">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="116" IsReadOnly="True">
+            <ComboBox x:Name="ModeSelector" Grid.Column="1" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="116" IsReadOnly="True">
                 <ComboBoxItem Content="Cartoon Mode"/>
-                <ComboBoxItem Content="Emoji Mode"/>
-                <ComboBoxItem Content="Christmas Mode"/>
+                <System:String>Cartoon Mode</System:String>
+                <System:String>Emoji Mode</System:String>
+
             </ComboBox>
             <TextBlock HorizontalAlignment="Center" Text="Mode Selector" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="218" FontSize="24" Foreground="White" TextAlignment="Center" Margin="0,11,0,0"/>
             <TextBlock TextWrapping="Wrap" Grid.Column="2" FontSize="24" Foreground="White" TextAlignment="Center" Text="City:"/>
-            <TextBox Grid.Column="3" HorizontalAlignment="Center" Height="22" Margin="0,21,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+            <TextBox x:Name="CityText" Grid.Column="3" HorizontalAlignment="Center" Height="22" Margin="0,21,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
             <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="State:" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="219" Foreground="White" FontSize="24" TextAlignment="Center" Margin="0,11,0,0"/>
-            <ComboBox Grid.Column="5" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="135" IsReadOnly="True">
-                <ComboBoxItem Content="US-AK"/>
-                <ComboBoxItem Content="US-AL"/>
-                <ComboBoxItem Content="US-AZ"/>
-                <ComboBoxItem Content="US-AR"/>
-                <ComboBoxItem Content="US-CA"/>
-                <ComboBoxItem Content="US-CO"/>
-                <ComboBoxItem Content="US-CT"/>
-                <ComboBoxItem Content="US-DE"/>
-                <ComboBoxItem Content="US-FL"/>
-                <ComboBoxItem Content="US-GA"/>
-                <ComboBoxItem Content="US-HI"/>
-                <ComboBoxItem Content="US-ID"/>
-                <ComboBoxItem Content="US-IL"/>
-                <ComboBoxItem Content="US-IN"/>
-                <ComboBoxItem Content="US-IA"/>
-                <ComboBoxItem Content="US-KA"/>
-                <ComboBoxItem Content="US-KE"/>
-                <ComboBoxItem Content="US-LA"/>
-                <ComboBoxItem Content="US-ME"/>
-                <ComboBoxItem Content="US-MD"/>
-                <ComboBoxItem Content="US-MA"/>
-                <ComboBoxItem Content="US-MI"/>
-                <ComboBoxItem Content="US-MN"/>
-                <ComboBoxItem Content="US-MS"/>
-                <ComboBoxItem Content="US-MO"/>
-                <ComboBoxItem Content="US-MT"/>
-                <ComboBoxItem Content="US-NE"/>
-                <ComboBoxItem Content="US-NV"/>
-                <ComboBoxItem Content="US-NH"/>
-                <ComboBoxItem Content="US-NJ"/>
-                <ComboBoxItem Content="US-NM"/>
-                <ComboBoxItem Content="US-NY"/>
-                <ComboBoxItem Content="US-NC"/>
-                <ComboBoxItem Content="US-ND"/>
-                <ComboBoxItem Content="US-OH"/>
-                <ComboBoxItem Content="US-OK"/>
-                <ComboBoxItem Content="US-OR"/>
-                <ComboBoxItem Content="US-PA"/>
-                <ComboBoxItem Content="US-RI"/>
-                <ComboBoxItem Content="US-SC"/>
-                <ComboBoxItem Content="US-SD"/>
-                <ComboBoxItem Content="US-TN"/>
-                <ComboBoxItem Content="US-TX"/>
-                <ComboBoxItem Content="US-UT"/>
-                <ComboBoxItem Content="US-VT"/>
-                <ComboBoxItem Content="US-VA"/>
-                <ComboBoxItem Content="US-WA"/>
-                <ComboBoxItem Content="US-WV"/>
-                <ComboBoxItem Content="US-WI"/>
-                <ComboBoxItem Content="US-WY"/>
+            <ComboBox x:Name="StateCode" Grid.Column="5" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="135" IsReadOnly="True">
+                <System:String>US-AK</System:String>
+                <System:String>US-AL</System:String>
+                <System:String>US-AZ</System:String>
+                <System:String>US-AR</System:String>
+                <System:String>US-CA</System:String>
+                <System:String>US-CO</System:String>
+                <System:String>US-CT</System:String>
+                <System:String>US-DE</System:String>
+                <System:String>US-FL</System:String>
+                <System:String>US-GA</System:String>
+                <System:String>US-HI</System:String>
+                <System:String>US-ID</System:String>
+                <System:String>US-IL</System:String>
+                <System:String>US-IN</System:String>
+                <System:String>US-IA</System:String>
+                <System:String>US-KS</System:String>
+                <System:String>US-KY</System:String>
+                <System:String>US-LA</System:String>
+                <System:String>US-ME</System:String>
+                <System:String>US-MD</System:String>
+                <System:String>US-MA</System:String>
+                <System:String>US-MI</System:String>
+                <System:String>US-MN</System:String>
+                <System:String>US-MS</System:String>
+                <System:String>US-MO</System:String>
+                <System:String>US-MT</System:String>
+                <System:String>US-NE</System:String>
+                <System:String>US-NV</System:String>
+                <System:String>US-NH</System:String>
+                <System:String>US-NJ</System:String>
+                <System:String>US-NM</System:String>
+                <System:String>US-NY</System:String>
+                <System:String>US-NC</System:String>
+                <System:String>US-ND</System:String>
+                <System:String>US-OH</System:String>
+                <System:String>US-OK</System:String>
+                <System:String>US-OR</System:String>
+                <System:String>US-PA</System:String>
+                <System:String>US-RI</System:String>
+                <System:String>US-SC</System:String>
+                <System:String>US-SD</System:String>
+                <System:String>US-TN</System:String>
+                <System:String>US-TX</System:String>
+                <System:String>US-UT</System:String>
+                <System:String>US-VT</System:String>
+                <System:String>US-VA</System:String>
+                <System:String>US-WA</System:String>
+                <System:String>US-WV</System:String>
+                <System:String>US-WI</System:String>
+                <System:String>US-WY</System:String>
+                <System:String>US-DC</System:String>
             </ComboBox>
 
         </Grid>
+        <Button x:Name="GetCityInfo" Content="Button" HorizontalAlignment="Left" Margin="1826,66,0,0" VerticalAlignment="Top" Click="GetCityInfo_Click"/>
+        <Button x:Name="ModeChanger" Content="Change Mode" HorizontalAlignment="Left" Margin="914,66,0,0" VerticalAlignment="Top" Width="101" Click="ModeChanger_Click"/>
 
 
 

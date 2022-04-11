@@ -19,7 +19,6 @@
     <None Remove="Images\Sun.png" />
     <None Remove="Images\Sunrise.png" />
     <None Remove="Images\Sunset.png" />
-    <None Remove="Images\ThunderStorm.png" />
     <None Remove="Images\Visibility.png" />
     <None Remove="Smile.png" />
     <None Remove="Sun.png" />
@@ -52,9 +51,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Sunset.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\ThunderStorm.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Visibility.png">
