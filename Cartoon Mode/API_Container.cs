@@ -19,6 +19,7 @@ namespace Cartoon_Mode
         public string visibility;//In meters
         public string precipiation;//Yes/no
         public string lastUpdate;//Time of last update
+        public string feels_like;
     }
 
     class API_Container
@@ -114,7 +115,7 @@ namespace Cartoon_Mode
 
                     if (node.Name == "clouds")
                     {
-                        newCity.clouds = node.Attributes["name"].Value;
+                        newCity.clouds = node.Attributes["value"].Value;
                     }
 
                     //In meters
@@ -135,7 +136,10 @@ namespace Cartoon_Mode
                         newCity.lastUpdate = node.Attributes["value"].Value;
                     }
 
-
+                    if(node.Name == "feels_like") 
+                    {
+                        newCity.feels_like = node.Attributes["value"].Value;
+                    }
                 }
 
             }

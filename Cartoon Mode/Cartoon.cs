@@ -5,7 +5,6 @@ using System.Windows.Media;
 
 namespace Cartoon_Mode
 {
-
     public interface Theme
     {
         string getSource();
@@ -14,11 +13,10 @@ namespace Cartoon_Mode
     public class CartoonTheme : Theme
     {
         string CurrentWeatherSource;
-        List<string> Forecast;
+        API_Container container2 = new API_Container();
         public CartoonTheme()
         {
-            
-            
+           
         }
 
 
@@ -27,5 +25,7 @@ namespace Cartoon_Mode
         {
             return CurrentWeatherSource;
         }
+
+        
     }
 }
