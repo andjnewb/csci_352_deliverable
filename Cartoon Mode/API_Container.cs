@@ -26,7 +26,7 @@ namespace Cartoon_Mode
     {
         WebClient client;
         public XmlDocument doc;
-        string URL_string = @"https://api.openweathermap.org/data/2.5/weather?q=";
+        string URL_string = @"https://api.openweathermap.org/data/2.5/weather?q=";//set up for current weather
 
 
         public API_Container()
@@ -39,8 +39,73 @@ namespace Cartoon_Mode
 
         }
 
+        public List<City> call_api_week(string cityName, string stateCode, int numDays)
+        {
+            clear_url_string("forecast");//make sure the url string is ready to have specific information added
+
+            URL_string += cityName + "," + stateCode + "&cnt=" + numDays + "&mode=xml" + "&units=imperial" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
+
+
+            List<City> forecastCity = new List<City>();
+
+            try
+            {
+                doc.Load(@URL_string);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ERROR: " + e.Message);//We should probably return a blank city here or have a flag
+            }
+
+            XmlElement root = doc.DocumentElement;
+
+            if (root != null)
+            {
+                foreach (XmlNode node in root.ChildNodes)
+                {
+
+
+
+                    if (node.Name == "location")
+                    {
+                        foreach (XmlNode locationChild in node.ChildNodes)
+                        {
+                            if (locationChild.Name == "name")
+                            {
+                                
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+
+
+            doc = new XmlDocument();
+            return forecastCity;
+        }
+
+
+        private void clear_url_string(string currentOrForecast)
+        {
+            if (currentOrForecast == "current")
+            {
+                URL_string = @"https://api.openweathermap.org/data/2.5/weather?q=";
+            }
+
+            else if (currentOrForecast == "forecast")
+            {
+                URL_string = @"https://api.openweathermap.org/data/2.5/forecast/daily?q=";
+            }
+        }
+
         public City call_api_now(string cityName, string stateCode)
         {
+
+            clear_url_string("current");
+
             URL_string += cityName + "," + stateCode + "&mode=xml" + "&units=imperial" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
             try
             {
