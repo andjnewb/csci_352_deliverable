@@ -227,18 +227,17 @@ The requirements were acquired with all of us talking in class about the functio
 \begin{itemize}
 \item The User should have the ability to pick what location they want to get the weather from -- allows the User to get particular information for their use.
 \item The User will be able to see all weather information provided by OpenWeatherAPI.
-\item The User will be alerted when the national weather service has alerts for their location and their favorited locations.
+\item The User will be alerted when the national weather service has alerts for the searched location.
 \item The system will connect to the OpenWeatherAPI.
 \item The User will be able to put locations into folders.
-\item The system will be able to store the locations previously searched by the user.
-\item The User will be able to search for a location and/or zip code.
+\item The User will be able to search for a location.
 \end{itemize}
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item Privacy - The user's current location will be protected and not given to any third parties. The user will have an option to not allow the app to track their location.
+\item Privacy - The user's search locations will be protected and not given to any third parties.
 \item Reliability - The app will work with a proper internet connection.
-\item Capacity - The app will have the same capacity as the storage on the computer i.e. The user will be able to have as many locations as their phone or computer can fit.
+\item Capacity - The app will have the same capacity as the storage on the computer i.e. The user will be able to have as many locations as their phone or computer can fit. Also the API calls are limited to 1,000,000 calls per month.
 \end{itemize}
 
 \subsection{Use Cases}
@@ -294,9 +293,9 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \end{itemize}
 
 \begin{enumerate}
-\item The user will type in the desired zip code in the ``Search" bar.
+\item The user will type in the desired City into the textbox and select a state from the combobox. Then they will press a button and the data will appear for that city.
 \item The application will present the current weather forecast.
-\item The user can search for new locations in the search bar if desired. 
+\item The user can search for new locations if desired. 
 \item[Termination Outcome:] The user can now interact with all features of the application regarding this location.
 \end{enumerate}
 
@@ -349,11 +348,11 @@ We haven't decided on all of design patterns yet but we feel that the factory me
 
 
 \subsection{Design Patterns Used}
-Right now we only have plans for a factory pattern, but more are sure to come as the project evolves!
+We used a facade pattern and a vistor pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot touch anything on the backend. The visitor pattern is used when checking the mode/theme of the program. The program visits each data point (the two themes in this case) and does different actions based on which one it is. 
 
 
 \section{Results}
-This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
+The UltraWeather collects data from OpenWeather API and displays it to the screen in a user friendly way. UltraWeather allows the person to type in a city and checks whether the city is valid. It provides an error MessageBox when it is not valid. The pictures will change when the weather is different, and the forecast will be as accurate as the API.
 
 \subsection{Future Work}
 Where are you going next with your project?
