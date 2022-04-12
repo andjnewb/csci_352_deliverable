@@ -39,7 +39,7 @@ namespace Cartoon_Mode
 
         }
 
-        public City call_api(string cityName, string stateCode)
+        public City call_api_now(string cityName, string stateCode)
         {
             URL_string += cityName + "," + stateCode + "&mode=xml" + "&units=imperial" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
             try
