@@ -27,6 +27,8 @@ namespace Cartoon_Mode
         public MainWindow()
         {
             InitializeComponent();
+            container = new API_Container();
+            container.call_api_now("Knoxville", "US-TN");
         }
 
         private void GetCityInfo_Click(object sender, RoutedEventArgs e)
@@ -35,57 +37,87 @@ namespace Cartoon_Mode
             currentCity = container.call_api_now(CityText.Text, StateCode.Text);
             if (currentCity.temperature != null)
             {
+                int offset = Convert.ToInt32(currentCity.timezone);
+                DateTime time = DateTime.Parse(currentCity.sunriseSunset.Item1);
+                time.AddSeconds(offset);
                 CurrentTemp.Text = currentCity.temperature.Item1 + "°";
                 CurrentCityName.Text = currentCity.city.Item2;
                 Humidity.Text = currentCity.humidity + "%";
-                Sunrise.Text = currentCity.sunriseSunset.Item1.Remove(0, 11) + " AM";
-                Sunset.Text = currentCity.sunriseSunset.Item2 + " PM";
+                Sunrise.Text = time.ToString().Remove(0, 11);
+                Sunset.Text = currentCity.sunriseSunset.Item2.Remove(0,11) + " PM UTC";
                 Visibility.Text = currentCity.visibility + "+ Meters";
                 FeelTemp.Text = currentCity.feels_like;
                 Pressure.Text = currentCity.pressure + "hPa";
-                if (currentCity.clouds == "1" && currentCity.precipiation == "no")
-                {
-                    if (ModeSelector.Text == "Cartoon Mode")
-                    {
-                        String stringPath = "/Images/Sun.png";
-                        Uri imageUri = new Uri(stringPath, UriKind.Relative);
-                        BitmapImage imageBitmap1 = new BitmapImage(imageUri);
-                        CurrentWeatherImage.Source = imageBitmap1;
-                        CurrentWeatherImage.Uid = "1";
-                    }
-                    else
-                    {
-                        String stringPath = "/Images/EmojiSun.png";
-                        Uri imageUri = new Uri(stringPath, UriKind.Relative);
-                        BitmapImage imageBitmap = new BitmapImage(imageUri);
-                        CurrentWeatherImage.Source = imageBitmap;
-                    }
-                }
-                else if (currentCity.precipiation == "rain")
-                {
-                    String stringPath = "/Images/Rain.png";
-                    Uri imageUri = new Uri(stringPath, UriKind.Relative);
-                    BitmapImage imageBitmap2 = new BitmapImage(imageUri);
-                    CurrentWeatherImage.Source = imageBitmap2;
-                }
-                else if (Convert.ToInt64(currentCity.clouds) > 50 && Convert.ToInt64(currentCity.clouds) < 75 && currentCity.precipiation == "rain")
-                {
-                    String stringPath = "/Images/PartlyCloudy.png";
-                    Uri imageUri = new Uri(stringPath, UriKind.Relative);
-                    BitmapImage imageBitmap3 = new BitmapImage(imageUri);
-                    CurrentWeatherImage.Source = imageBitmap3;
-                }
-                else
-                {
-                    String stringPath = "/Images/EmojiSun.png";
-                    Uri imageUri = new Uri(stringPath, UriKind.Relative);
-                    BitmapImage imageBitmap4 = new BitmapImage(imageUri);
-                    CurrentWeatherImage.Source = imageBitmap4;
-                }
             }
             else
             {
                 MessageBox.Show("Please enter valid City Name for the State selected");
+            }
+
+        }
+
+        private void ModeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentCity.clouds == "1" && currentCity.precipiation == "no")
+            {
+                if (ModeSelector.Text == "Cartoon Mode")
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Sun.png");
+                }
+                else
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiSun.png");
+                }
+            }
+            else if (currentCity.precipiation == "rain")
+            {
+                if (ModeSelector.Text == "Cartoon Mode")
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Rain.png");
+                }
+                else
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiRain.png");
+                }
+            }
+            else if (Convert.ToInt64(currentCity.clouds) > 50 && Convert.ToInt64(currentCity.clouds) < 75 && currentCity.precipiation == "rain")
+            {
+                if (ModeSelector.Text == "Cartoon Mode")
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/PartlyCloudy.png");
+                }
+                else
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiPartlyCloudy.png");
+                }
+            }
+            else
+            {
+                if (ModeSelector.Text == "Cartoon Mode") {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/PartlyCloudy.png");
+                }
+                else
+                {
+                    CurrentWeatherImage.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiPartlyCloudy.png");
+                } 
+            }
+            if(ModeSelector.Text == "Cartoon Mode")
+            {
+                HumidityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Humidity.png");
+                SunrisePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Sunrise.png");
+                SunsetPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Sunset.png");
+                VisibilityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Visibility.png");
+                FeelLikePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Feel_Like.png");
+                PressurePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Barometer.png");
+            }
+            else
+            {
+                HumidityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiHumidity.png");
+                SunrisePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiSunrise.png");
+                SunsetPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiSunset.png");
+                FeelLikePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiFeelLike.png");
+                VisibilityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiVisibility.png");
+                PressurePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiBarometer.png");
             }
 
         }

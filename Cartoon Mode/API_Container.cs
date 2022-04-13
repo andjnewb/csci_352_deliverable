@@ -20,6 +20,7 @@ namespace Cartoon_Mode
         public string precipiation;//Yes/no
         public string lastUpdate;//Time of last update
         public string feels_like;
+        public string timezone;
     }
 
     class API_Container
@@ -77,8 +78,7 @@ namespace Cartoon_Mode
                             {
                                 newCity.sunriseSunset = new Tuple<string, string>(cityChild.Attributes["rise"].Value, cityChild.Attributes["set"].Value);
                             }
-
-
+                         
                         }
 
                     }
@@ -139,6 +139,11 @@ namespace Cartoon_Mode
                     if(node.Name == "feels_like") 
                     {
                         newCity.feels_like = node.Attributes["value"].Value;
+                    }
+
+                    if (node.Name == "timezone")
+                    {
+                        newCity.timezone = node.Attributes["value"].Value;
                     }
                 }
 
