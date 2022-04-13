@@ -5,26 +5,18 @@ using System.Windows.Media;
 
 namespace Cartoon_Mode
 {
-    public interface Theme
-    {
-        string getSource();
-    }
 
-    public class CartoonTheme : Theme
+    public class CartoonTheme
     {
-        string CurrentWeatherSource;
-        API_Container container2 = new API_Container();
+        string startPath;
         public CartoonTheme()
         {
+           startPath = "/Images/";
            
         }
 
 
 
-        public string getSource()
-        {
-            return CurrentWeatherSource;
-        }
 
         
     }

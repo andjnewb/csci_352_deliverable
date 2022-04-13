@@ -20,7 +20,6 @@ namespace Cartoon_Mode
     /// </summary>
     public partial class MainWindow : Window
     {
-        Theme CurrentTheme;
         City currentCity;
         API_Container container;
 
@@ -28,45 +27,67 @@ namespace Cartoon_Mode
         public MainWindow()
         {
             InitializeComponent();
-            CurrentTheme = new CartoonTheme();
         }
 
         private void GetCityInfo_Click(object sender, RoutedEventArgs e)
         {
             container = new API_Container();
-            currentCity = container.call_api(CityText.Text, StateCode.Text);
+            currentCity = container.call_api_now(CityText.Text, StateCode.Text);
             if (currentCity.temperature != null)
             {
                 CurrentTemp.Text = currentCity.temperature.Item1 + "°";
                 CurrentCityName.Text = currentCity.city.Item2;
                 Humidity.Text = currentCity.humidity + "%";
-                Sunrise.Text = currentCity.sunriseSunset.Item1 + " AM";
+                Sunrise.Text = currentCity.sunriseSunset.Item1.Remove(0, 11) + " AM";
                 Sunset.Text = currentCity.sunriseSunset.Item2 + " PM";
                 Visibility.Text = currentCity.visibility + "+ Meters";
                 FeelTemp.Text = currentCity.feels_like;
                 Pressure.Text = currentCity.pressure + "hPa";
+                if (currentCity.clouds == "1" && currentCity.precipiation == "no")
+                {
+                    if (ModeSelector.Text == "Cartoon Mode")
+                    {
+                        String stringPath = "/Images/Sun.png";
+                        Uri imageUri = new Uri(stringPath, UriKind.Relative);
+                        BitmapImage imageBitmap1 = new BitmapImage(imageUri);
+                        CurrentWeatherImage.Source = imageBitmap1;
+                        CurrentWeatherImage.Uid = "1";
+                    }
+                    else
+                    {
+                        String stringPath = "/Images/EmojiSun.png";
+                        Uri imageUri = new Uri(stringPath, UriKind.Relative);
+                        BitmapImage imageBitmap = new BitmapImage(imageUri);
+                        CurrentWeatherImage.Source = imageBitmap;
+                    }
+                }
+                else if (currentCity.precipiation == "rain")
+                {
+                    String stringPath = "/Images/Rain.png";
+                    Uri imageUri = new Uri(stringPath, UriKind.Relative);
+                    BitmapImage imageBitmap2 = new BitmapImage(imageUri);
+                    CurrentWeatherImage.Source = imageBitmap2;
+                }
+                else if (Convert.ToInt64(currentCity.clouds) > 50 && Convert.ToInt64(currentCity.clouds) < 75 && currentCity.precipiation == "rain")
+                {
+                    String stringPath = "/Images/PartlyCloudy.png";
+                    Uri imageUri = new Uri(stringPath, UriKind.Relative);
+                    BitmapImage imageBitmap3 = new BitmapImage(imageUri);
+                    CurrentWeatherImage.Source = imageBitmap3;
+                }
+                else
+                {
+                    String stringPath = "/Images/EmojiSun.png";
+                    Uri imageUri = new Uri(stringPath, UriKind.Relative);
+                    BitmapImage imageBitmap4 = new BitmapImage(imageUri);
+                    CurrentWeatherImage.Source = imageBitmap4;
+                }
             }
             else
             {
                 MessageBox.Show("Please enter valid City Name for the State selected");
             }
 
-        }
-
-        private void ModeChanger_Click(object sender, RoutedEventArgs e)
-        {
-            if(ModeSelector.Text == "Cartoon Mode")
-            {
-                CurrentTheme = new CartoonTheme();
-            }
-            else if(ModeSelector.Text == "Emoji Mode")
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("Please select a mode: ");
-            }
         }
     }
 }

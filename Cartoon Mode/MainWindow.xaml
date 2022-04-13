@@ -21,29 +21,29 @@
             <TextBlock x:Name="Humidity" TextWrapping="Wrap" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White" Margin="0,238,10,0" Text="79%"/>
             <TextBlock x:Name="Sunrise" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White" Text="7:25 AM" Margin="0,238,0,0"/>
 
-            <Image Margin="37,68,37,68" Stretch="Fill" Source="/Images/Sunrise.png" Grid.Column="1"/>
+            <Image x:Name="SunrisePic" Margin="37,68,37,68" Stretch="Fill" Source="/Images/Sunrise.png" Grid.Column="1"/>
             <TextBlock x:Name="FeelTemp" TextWrapping="Wrap" Grid.Column="2" Grid.Row="0" Foreground="White" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="5,234,0,0" Text="90°"/>
             <Grid Grid.Column="2" Margin="35,94,35,48">
-                <Image Stretch="Fill" Source="/Images/Feel_Like.png" RenderTransformOrigin="0.5,0.5" Margin="54,-30,54,10"/>
+                <Image x:Name="FeelLikePic" Stretch="Fill" Source="/Images/Feel_Like.png" RenderTransformOrigin="0.5,0.5" Margin="54,-30,54,10"/>
             </Grid>
             <TextBlock x:Name="Visibility" TextWrapping="Wrap" Grid.Column="0" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,196,379,0" Text="10 KMs" Grid.Row="1"/>
             <Grid Margin="8,33,379,33" Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid Margin="0,10,0,0">
-                    <Image Stretch="Fill" Source="/Images/Visibility.png" Margin="106,11,105,32"/>
+                    <Image x:Name="VisibilityPic" Stretch="Fill" Source="/Images/Visibility.png" Margin="106,11,105,32"/>
                     <TextBlock HorizontalAlignment="Center" Text="Visibility" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="373" Foreground="White" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="0,-39,0,0"/>
                 </Grid>
             </Grid>
             <TextBlock x:Name="Sunset" TextWrapping="Wrap" Grid.Column="1" FontWeight="Bold" FontSize="36" TextAlignment="Center" Foreground="White" Margin="4,196,375,0" Text="6:59 PM" Grid.Row="1" Grid.ColumnSpan="2"/>
             <Grid Grid.Column="1" Margin="17,61,8,61" Grid.Row="1">
-                <Image Stretch="Fill" Source="/Images/Sunset.png" Margin="81,-10,81,10"/>
+                <Image x:Name="SunsetPic" Stretch="Fill" Source="/Images/Sunset.png" Margin="81,-10,81,10"/>
             </Grid>
             <TextBlock x:Name="Pressure" TextWrapping="Wrap" Grid.Column="1" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="379,206,-5,-1" Foreground="White" Text="29.12 hPa" Grid.Row="1" Grid.ColumnSpan="2"/>
             <Grid Grid.Column="2" Margin="19,45,19,61" Grid.Row="1">
                 <Grid>
-                    <Image Stretch="Fill" Source="/Images/Barometer.png" Margin="91,10,91,10"/>
+                    <Image x:Name="PressurePic" Stretch="Fill" Source="/Images/Barometer.png" Margin="91,10,91,10"/>
                 </Grid>
             </Grid>
-            <Image Stretch="Fill" Source="/Images/Humidity.png" Grid.Column="0" Grid.Row="0" Margin="54,56,59,63"/>
+            <Image x:Name="HumidityPic" Stretch="Fill" Source="/Images/Humidity.png" Grid.Column="0" Grid.Row="0" Margin="54,56,59,63"/>
             <TextBlock HorizontalAlignment="Center" Text="Humidity" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="271" Foreground="White" FontSize="36" TextAlignment="Center" FontWeight="Bold"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="Sunrise" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="305" Foreground="White" FontSize="36" FontWeight="Bold" TextAlignment="Center"/>
             <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="Feel Like Temperature" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="375" Foreground="White" FontSize="36" TextAlignment="Center" FontWeight="Bold"/>
@@ -79,19 +79,19 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" RenderTransformOrigin="0.494,0.572" Grid.Row="0" Grid.Column="0"/>
+            <Image x:Name="ForecastPic1" Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" RenderTransformOrigin="0.494,0.572" Grid.Row="0" Grid.Column="0"/>
             <TextBlock x:Name="ForecastDay1" Text="79°/85°" TextWrapping="Wrap" Grid.Column="0" Grid.Row="1" TextAlignment="Center" FontSize="48" Foreground="White" FontWeight="Bold"/>
-            <Image Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="ForecastPic2" Margin="48,10,48,10" Stretch="Fill" Source="/Images/Rain.png" Grid.Column="1" Grid.Row="0"/>
             <TextBlock x:Name="ForecastDay2" Text="76°/79°" TextWrapping="Wrap" Grid.Row="1" FontSize="48" TextAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,0,266,0" FontWeight="Bold" Grid.Column="1"/>
-            <Image Grid.Column="2" Margin="26,0,26,135" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.RowSpan="2"/>
+            <Image x:Name="ForecastPic3" Grid.Column="2" Margin="26,0,26,135" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.RowSpan="2"/>
             <TextBlock x:Name="ForecastDay3" Text="81°/91°" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Foreground="White" FontSize="48" TextAlignment="Center" FontWeight="Bold"/>
-            <Image Grid.Column="3" Margin="57,-2,57,10" Stretch="Fill" Source="/Images/Sun.png"/>
+            <Image x:Name="ForecastPic4" Grid.Column="3" Margin="57,-2,57,10" Stretch="Fill" Source="/Images/Sun.png"/>
             <TextBlock x:Name="ForecastDay4" TextWrapping="Wrap" Grid.Column="3" Grid.Row="1" Text="90°/95°" Foreground="White" FontSize="48" FontWeight="Bold" TextAlignment="Center"/>
-            <Image Grid.Column="4" Margin="26,6,26,2" Stretch="Fill" Source="/Images/Rain.png"/>
+            <Image x:Name="ForecastPic5" Grid.Column="4" Margin="26,6,26,2" Stretch="Fill" Source="/Images/Rain.png"/>
             <TextBlock x:Name="ForecastDay5" TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" FontSize="48" FontWeight="Bold" Text="80°/85°" TextAlignment="Center" Foreground="White"/>
-            <Image Grid.Column="5" Margin="40,4,39,135" Stretch="Fill" Source="/Images/Rain.png" Grid.RowSpan="2"/>
+            <Image x:Name="ForecastPic6" Grid.Column="5" Margin="40,4,39,135" Stretch="Fill" Source="/Images/Rain.png" Grid.RowSpan="2"/>
             <TextBlock x:Name="ForecastDay6" Text="78°/85°" TextWrapping="Wrap" Grid.Column="5" Grid.Row="1" FontSize="48" FontWeight="Bold" Margin="0,1,0,-1" TextAlignment="Center" Foreground="White"/>
-            <Image Margin="10,-2,1,2" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.Column="6" Grid.Row="0"/>
+            <Image x:Name="ForecastPic7" Margin="10,-2,1,2" Stretch="Fill" Source="/Images/PartlyCloudy.png" Grid.Column="6" Grid.Row="0"/>
             <TextBlock x:Name="ForecastDay7" Text="87°/92°" TextWrapping="Wrap" Grid.Column="7" Grid.Row="1" FontSize="48" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
 
 
@@ -171,7 +171,6 @@
 
         </Grid>
         <Button x:Name="GetCityInfo" Content="Go" HorizontalAlignment="Left" Margin="1821,66,0,0" VerticalAlignment="Top" Click="GetCityInfo_Click" Width="46"/>
-        <Button x:Name="ModeChanger" Content="Change Mode" HorizontalAlignment="Left" Margin="914,66,0,0" VerticalAlignment="Top" Width="101" Click="ModeChanger_Click"/>
 
 
 
