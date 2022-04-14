@@ -28,6 +28,7 @@ namespace Cartoon_Mode
         WebClient client;
         public XmlDocument doc;
         string URL_string = @"https://api.openweathermap.org/data/2.5/weather?q=";
+        string Forecast_URL_string = @"https://api.openweathermap.org/data/2.5/forecast/daily?q=";
 
 
         public API_Container()
@@ -37,6 +38,61 @@ namespace Cartoon_Mode
 
 
             doc.PreserveWhitespace = true;
+
+        }
+
+        public City forecast_api(string cityName, string stateCode)
+        {
+            Forecast_URL_string += cityName + "," + stateCode + "&mode = xml" + "&cnt=7" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
+            try
+            {
+                doc.Load(@Forecast_URL_string);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ERROR: " + e.Message);
+            }
+            City forecastCity = new City();
+            XmlElement root = doc.DocumentElement;
+            if(root != null)
+            {
+                foreach (XmlNode node in root.ChildNodes)
+                {
+                    if (node.Name == "location")
+                    {
+                        foreach (XmlNode cityChild in node.ChildNodes)
+                        {
+                            if(cityChild.Name == "location")
+                            {
+                                foreach(XmlNode cityChild2 in cityChild.ChildNodes)
+                                {
+                                    forecastCity.coords = new Tuple<string, string>(cityChild2.Attributes["longitude"].Value, cityChild2.Attributes["latitude"].Value);
+                                }
+                            }
+                            if(cityChild.Name == "name")
+                            {
+                                forecastCity.city = new Tuple<string, string>(cityChild.InnerXml, null);
+                            }
+                        }
+                    }
+                    if(node.Name == "forecast")
+                    {
+                        foreach(XmlNode cityChild in node.ChildNodes)
+                        {
+                            if(cityChild.Name == "precipitation")
+                            {
+                                foreach(XmlNode cityChild2 in cityChild.ChildNodes)
+                                {
+                                   if(cityChild2.Name == "type")
+                                   {
+                                        forecastCity.precipiation = cityChild2.Attributes["type"].Value;
+                                   }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
         }
 
@@ -78,7 +134,11 @@ namespace Cartoon_Mode
                             {
                                 newCity.sunriseSunset = new Tuple<string, string>(cityChild.Attributes["rise"].Value, cityChild.Attributes["set"].Value);
                             }
-                         
+
+                            if(cityChild.Name == "timezone")
+                            {
+                                newCity.timezone = cityChild.InnerXml;
+                            }
                         }
 
                     }
@@ -136,14 +196,9 @@ namespace Cartoon_Mode
                         newCity.lastUpdate = node.Attributes["value"].Value;
                     }
 
-                    if(node.Name == "feels_like") 
+                    if (node.Name == "feels_like")
                     {
                         newCity.feels_like = node.Attributes["value"].Value;
-                    }
-
-                    if (node.Name == "timezone")
-                    {
-                        newCity.timezone = node.Attributes["value"].Value;
                     }
                 }
 

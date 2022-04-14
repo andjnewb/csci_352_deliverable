@@ -37,14 +37,19 @@ namespace Cartoon_Mode
             currentCity = container.call_api_now(CityText.Text, StateCode.Text);
             if (currentCity.temperature != null)
             {
-                int offset = Convert.ToInt32(currentCity.timezone);
-                DateTime time = DateTime.Parse(currentCity.sunriseSunset.Item1);
-                time.AddSeconds(offset);
+                if (currentCity.timezone != "0")
+                {
+                    double offsetHours = Convert.ToDouble(currentCity.timezone) / 60 / 60;
+                    DateTime sunriseTimeUTC = DateTime.Parse(currentCity.sunriseSunset.Item1);
+                    DateTime sunriseLocalTime = sunriseTimeUTC.AddHours(offsetHours);
+                    Sunrise.Text = sunriseLocalTime.ToString().Remove(0, 10);
+                    DateTime sunsetTimeUTC = DateTime.Parse(currentCity.sunriseSunset.Item2);
+                    DateTime sunsetLocalTime = sunsetTimeUTC.AddHours(offsetHours);
+                    Sunset.Text = sunsetLocalTime.ToString().Remove(0, 10);
+                }
                 CurrentTemp.Text = currentCity.temperature.Item1 + "°";
                 CurrentCityName.Text = currentCity.city.Item2;
                 Humidity.Text = currentCity.humidity + "%";
-                Sunrise.Text = time.ToString().Remove(0, 11);
-                Sunset.Text = currentCity.sunriseSunset.Item2.Remove(0,11) + " PM UTC";
                 Visibility.Text = currentCity.visibility + "+ Meters";
                 FeelTemp.Text = currentCity.feels_like;
                 Pressure.Text = currentCity.pressure + "hPa";
