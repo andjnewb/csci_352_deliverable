@@ -22,19 +22,20 @@ namespace Cartoon_Mode
     {
         City currentCity;
         API_Container container;
-
+        City forecastCity;
+        API_Container forecastContainer;
 
         public MainWindow()
         {
             InitializeComponent();
-            container = new API_Container();
-            container.call_api_now("Knoxville", "US-TN");
         }
 
         private void GetCityInfo_Click(object sender, RoutedEventArgs e)
         {
             container = new API_Container();
+            forecastContainer = new API_Container();
             currentCity = container.call_api_now(CityText.Text, StateCode.Text);
+            forecastCity = forecastContainer.forecast_api(CityText.Text, StateCode.Text);
             if (currentCity.temperature != null)
             {
                 if (currentCity.timezone != "0")
@@ -124,7 +125,28 @@ namespace Cartoon_Mode
                 VisibilityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiVisibility.png");
                 PressurePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiBarometer.png");
             }
-
+            if(forecastCity.clouds == "1" && forecastCity.precipiation == "no")
+            {
+                if(ModeSelector.Text == "Cartoon Mode")
+                {
+                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Sun.png");
+                }
+                else
+                {
+                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiSun.png");
+                }
+            }
+            else if(forecastCity.precipiation == "yes")
+            {
+                if (ModeSelector.Text == "Cartoon Mode")
+                {
+                    ForecastPic2.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Rain.png");
+                }
+                else
+                {
+                    ForecastPic2.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiRain.png");
+                }
+            }
         }
     }
 }
