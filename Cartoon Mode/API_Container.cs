@@ -21,6 +21,10 @@ namespace Cartoon_Mode
         public string lastUpdate;//Time of last update
         public string feels_like;
         public string timezone;
+        public List<string> days;
+        public List<string> forecastPrecipitation;
+        public List<int> forecastMinTemp;
+        public List<int> forecastMaxTemp;
     }
 
     class API_Container
@@ -54,6 +58,8 @@ namespace Cartoon_Mode
             }
             City forecastCity = new City();
             XmlElement root = doc.DocumentElement;
+            forecastCity.days = new List<string>();
+            
             if(root != null)
             {
                 foreach (XmlNode node in root.ChildNodes)
@@ -79,40 +85,29 @@ namespace Cartoon_Mode
 
                             if (cityChild.Name == "time")
                             {
-                                foreach(XmlNode cityChild2 in cityChild) { 
-                                    if(cityChild2.Name == "precipitation")
+                                forecastCity.days.Add(cityChild.Attributes["day"].Value);
+                                foreach (XmlNode cityChild2 in cityChild)
+                                {
+                                    if (cityChild2.Name == "precipitation")
                                     {
                                         double probability = Convert.ToDouble(cityChild2.Attributes["probability"].Value);
-                                        if(probability >= 0 && probability <= 50)
+                                        forecastCity.forecastPrecipitation = new List<string>();
+                                        if (probability >= 0 && probability <= 0.50)
                                         {
-                                            forecastCity.precipiation = "yes";
+                                            forecastCity.forecastPrecipitation.Add("no");
                                         }
                                         else
                                         {
-                                            forecastCity.precipiation = "no";
+                                            forecastCity.forecastPrecipitation.Add("yes");
                                         }
                                     }
-                                    if(cityChild2.Name == "temperature")
+                                    if (cityChild2.Name == "temperature")
                                     {
-                                        forecastCity.temperature = new Tuple<string, string, string>(null, cityChild2.Attributes["min"].Value, cityChild2.Attributes["max"].Value);
+                                        forecastCity.forecastMinTemp.Add(Convert.ToInt32(cityChild2.Attributes["min"].Value));
+                                        forecastCity.forecastMaxTemp.Add(Convert.ToInt32(cityChild2.Attributes["max"].Value));
                                     }
                                 }
                             }
-
-
-
-                            //if (cityChild.Name == "precipitation")
-                            //{
-                            //    forecastCity.precipiation = cityChild.Attributes["type"].Value;
-                            //}
-                            //if(cityChild.Name == "temperature")
-                            //{
-                            //    forecastCity.temperature = new Tuple<string, string, string>(node.Attributes["day"].Value, node.Attributes["min"].Value, node.Attributes["max"].Value);
-                            //}
-                            //if(cityChild.Name == "clouds")
-                            //{
-                            //    forecastCity.clouds = cityChild.Attributes["all"].Value;
-                            //}
                         }
                     }
                 }
@@ -123,7 +118,7 @@ namespace Cartoon_Mode
 
         public City call_api_now(string cityName, string stateCode)
         {
-            URL_string += cityName + "," + stateCode + "&mode=xml" + "&units=imperial" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
+            URL_string += cityName + "," + stateCode + ",US&mode=xml" + "&units=imperial" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
             try
             {
                 doc.Load(@URL_string);

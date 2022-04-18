@@ -125,28 +125,42 @@ namespace Cartoon_Mode
                 VisibilityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiVisibility.png");
                 PressurePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiBarometer.png");
             }
-            if(forecastCity.clouds == "1" && forecastCity.precipiation == "no")
+            
+             
+            if (forecastCity.clouds == "1" && forecastCity.forecastPrecipitation[0] == "no")
             {
-                if(ModeSelector.Text == "Cartoon Mode")
-                {
-                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Sun.png");
-                }
-                else
-                {
+               if (ModeSelector.Text == "Cartoon Mode")
+               {
+                   ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Sun.png");
+               }
+               else
+               {
                     ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiSun.png");
-                }
+               }
             }
-            else if(forecastCity.precipiation == "yes")
+            else if (forecastCity.forecastPrecipitation[0] == "yes")
             {
                 if (ModeSelector.Text == "Cartoon Mode")
                 {
-                    ForecastPic2.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Rain.png");
+                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/Rain.png");
                 }
                 else
                 {
-                    ForecastPic2.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiRain.png");
+                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiRain.png");
                 }
             }
+            else
+            {
+                if(ModeSelector.Text == "Cartoon Mode")
+                {
+                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("c:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/PartlyCloudy.png");
+                }
+                else
+                {
+                    ForecastPic1.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("c:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiPartlyCloudy.png");
+                }
+            }
+            
         }
     }
 }
