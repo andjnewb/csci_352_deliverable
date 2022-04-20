@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Cartoon_Mode
 {
     /// <summary>
@@ -61,13 +62,13 @@ namespace Cartoon_Mode
                 Visibility.Text = currentCity.visibility + "+ Meters";
                 FeelTemp.Text = currentCity.feels_like;
                 Pressure.Text = currentCity.pressure + "hPa";
-                ForecastDay1.Text = forecastCity.forecastMinTemp[0] + "°/" + forecastCity.forecastMaxTemp[0] + "°";
-                ForecastDay2.Text = forecastCity.forecastMinTemp[1] + "°/" + forecastCity.forecastMaxTemp[1] + "°";
-                ForecastDay3.Text = forecastCity.forecastMinTemp[2] + "°/" + forecastCity.forecastMaxTemp[2] + "°";
-                ForecastDay4.Text = forecastCity.forecastMinTemp[3] + "°/" + forecastCity.forecastMaxTemp[3] + "°";
-                ForecastDay5.Text = forecastCity.forecastMinTemp[4] + "°/" + forecastCity.forecastMaxTemp[4] + "°";
-                ForecastDay6.Text = forecastCity.forecastMinTemp[5] + "°/" + forecastCity.forecastMaxTemp[5] + "°";
-                ForecastDay7.Text = forecastCity.forecastMinTemp[6] + "°/" + forecastCity.forecastMaxTemp[6] + "°";
+                ForecastDay1.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[0])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[0])) + "°";
+                ForecastDay2.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[1])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[1])) + "°";
+                ForecastDay3.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[2])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[2])) + "°";
+                ForecastDay4.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[3])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[3])) + "°";
+                ForecastDay5.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[4])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[4])) + "°";
+                ForecastDay6.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[5])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[5])) + "°";
+                ForecastDay7.Text = Math.Round(Convert.ToDouble(forecastCity.forecastMinTemp[6])) + "°/" + Math.Round(Convert.ToDouble(forecastCity.forecastMaxTemp[6])) + "°";
             }
             ForecastPicChange();
         }
@@ -134,7 +135,7 @@ namespace Cartoon_Mode
                 VisibilityPic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiVisibility.png");
                 PressurePic.Source = (ImageSource)new ImageSourceConverter().ConvertFromString("C:\\Users/jospcham/source/repos/Cartoon Mode/Cartoon Mode/Images/EmojiBarometer.png");
             }
-            
+            ForecastPicChange();
         }
         private void ForecastPicChange()
         {
