@@ -21,10 +21,10 @@ namespace Cartoon_Mode
         public string lastUpdate;//Time of last update
         public string feels_like;
         public string timezone;
-        public List<string> days;
         public List<string> forecastPrecipitation;
-        public List<int> forecastMinTemp;
-        public List<int> forecastMaxTemp;
+        public List<string> forecastMinTemp;
+        public List<string> forecastMaxTemp;
+        public List<string> forecastClouds;
     }
 
     class API_Container
@@ -47,7 +47,7 @@ namespace Cartoon_Mode
 
         public City forecast_api(string cityName, string stateCode)
         {
-            Forecast_URL_string += cityName + "," + stateCode + "&mode=xml" + "&units=imperial" + "&cnt=7" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
+            Forecast_URL_string += cityName + "," + stateCode + ",US&mode=xml" + "&units=imperial" + "&cnt=7" + "&appid=9473bff65614e52a5f6d38c9cb5649b8";
             try
             {
                 doc.Load(@Forecast_URL_string);
@@ -58,8 +58,11 @@ namespace Cartoon_Mode
             }
             City forecastCity = new City();
             XmlElement root = doc.DocumentElement;
-            forecastCity.days = new List<string>();
             
+            forecastCity.forecastMinTemp = new List<string>();
+            forecastCity.forecastMaxTemp = new List<string>();
+            forecastCity.forecastPrecipitation = new List<string>();
+            forecastCity.forecastClouds = new List<string>();
             if(root != null)
             {
                 foreach (XmlNode node in root.ChildNodes)
@@ -85,13 +88,11 @@ namespace Cartoon_Mode
 
                             if (cityChild.Name == "time")
                             {
-                                forecastCity.days.Add(cityChild.Attributes["day"].Value);
                                 foreach (XmlNode cityChild2 in cityChild)
                                 {
                                     if (cityChild2.Name == "precipitation")
                                     {
                                         double probability = Convert.ToDouble(cityChild2.Attributes["probability"].Value);
-                                        forecastCity.forecastPrecipitation = new List<string>();
                                         if (probability >= 0 && probability <= 0.50)
                                         {
                                             forecastCity.forecastPrecipitation.Add("no");
@@ -103,8 +104,12 @@ namespace Cartoon_Mode
                                     }
                                     if (cityChild2.Name == "temperature")
                                     {
-                                        forecastCity.forecastMinTemp.Add(Convert.ToInt32(cityChild2.Attributes["min"].Value));
-                                        forecastCity.forecastMaxTemp.Add(Convert.ToInt32(cityChild2.Attributes["max"].Value));
+                                        forecastCity.forecastMinTemp.Add((cityChild2.Attributes["min"].Value));
+                                        forecastCity.forecastMaxTemp.Add((cityChild2.Attributes["max"].Value));
+                                    }
+                                    if(cityChild2.Name == "clouds")
+                                    {
+                                        forecastCity.forecastClouds.Add((cityChild2.Attributes["all"].Value));
                                     }
                                 }
                             }
