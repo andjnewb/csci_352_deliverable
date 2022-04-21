@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.12)  20 APR 2022 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.12)  21 APR 2022 00:05
 entering extended mode
 **projectSample.tex
 (projectProposalDraft.tex
@@ -393,26 +393,26 @@ File: use_case_3.png Graphic file (type png)
 <use use_case_3.png>
 Package pdftex.def Info: use_case_3.png  used on input line 315.
 (pdftex.def)             Requested size: 223.58704pt x 129.18361pt.
-<Timeline.png, id=100, 1058.95625pt x 302.12875pt>
+<Timeline.png, id=100, 1827.82875pt x 570.13pt>
 File: Timeline.png Graphic file (type png)
 <use Timeline.png>
 Package pdftex.def Info: Timeline.png  used on input line 323.
-(pdftex.def)             Requested size: 529.47684pt x 151.064pt.
+(pdftex.def)             Requested size: 913.91214pt x 285.0643pt.
 
-Overfull \hbox (23.58684pt too wide) in paragraph at lines 323--324
+Overfull \hbox (408.02214pt too wide) in paragraph at lines 323--324
 [][] 
  []
 
-<WeatherApp.png, id=102, 972.63374pt x 598.235pt>
+[3 <./use_case_1.png> <./use_case_2.png> <./use_case_3.png>]
+<WeatherApp.png, id=112, 972.63374pt x 598.235pt>
 File: WeatherApp.png Graphic file (type png)
 <use WeatherApp.png>
 Package pdftex.def Info: WeatherApp.png  used on input line 340.
 (pdftex.def)             Requested size: 291.79237pt x 179.47188pt.
-[3 <./use_case_1.png> <./use_case_2.png>] [4 <./use_case_3.png> <./Timeline.png
-> <./WeatherApp.png>]
-** WARNING: \IEEEbiography is locked out when in conference mode (line 374).
+ [4 <./Timeline.png>]
+** WARNING: \IEEEbiography is locked out when in conference mode (line 372).
 ** WARNING: \IEEEbiographynophoto is locked out when in conference mode (line 3
-79).
+77).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -424,7 +424,10 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (projectProposalDraft.aux)
+[5 <./WeatherApp.png>] (projectProposalDraft.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `projectProposalDraft.out' has not changed.
 (rerunfilecheck)             Checksum: 713ABA1987756CD0C9336A9FBD3D8F2E;1128.
  ) 
@@ -442,7 +445,7 @@ y7.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utm
 b8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Users/Andrew/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on projectProposalDraft.pdf (5 pages, 151083 bytes).
+Output written on projectProposalDraft.pdf (5 pages, 328476 bytes).
 PDF statistics:
  151 PDF objects out of 1000 (max. 8388607)
  39 named destinations out of 1000 (max. 500000)
