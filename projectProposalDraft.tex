@@ -141,7 +141,7 @@
 
 \begin{document}
 
-\title{Deliverable for UltraWeather}
+\title{UltraWeather}
 %
 %
 
@@ -152,7 +152,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This computer application uses a weather API to collect weather data for the current time as well as the forecast for the week. The target audience are driving adults who need to know the weather conditions to get to work or class on time. The application will also have emergency notifications, such as tornado warnings. Currently, the project is able to call the API and get the current weather. It also has switchable themes that can be changed at any time. 
+This application uses the OpenWeatherAPI to collect weather data for the current time as well as the forecast for the week for a specific city in a state. The target audience are driving adults and students who need to know the weather conditions to get to work or class on time. UltraWeather is able to call the API and get the current weather and forecasting weather for up to a week. It also has switchable themes that can be changed at any time. 
 \end{abstract}
 
 }
@@ -216,7 +216,7 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \section{Scope}
-	We understand that in 2022, most weather apps have the same features we come to expect. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We want to take a minimalist, tile approach to our app. We also want to implement our radar. Whether we will have it dynamic (a looping map) or static is still to be decided. For our stretch goals, we want to implement severe weather alerts and also "pre-alerts". For the pre-alerts, the idea is to give users a heads-up alert up to a week before severe weather occurs. For example, if meteorologists are predicting a nasty storm front next week, the user should be alerted that there is the possibility for severe weather. Sometimes, just a tornado warning pushed to your phone as the storm is happening is too late to seek shelter.
+	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We want to take an information intensive approach giving the user all necessary information to plan out their day based on the weather. For our stretch goals, we want to implement severe weather alerts and implement a radar. The radar would be static and depict the radar at the current time only. 
 
 
 \subsection{Requirements}
@@ -225,18 +225,18 @@ The requirements were acquired with all of us talking in class about the functio
 \subsubsection{Functional}
 \begin{itemize}
 \item The User should have the ability to pick what location they want to get the weather from -- allows the User to get particular information for their use.
-\item The User will be able to see all weather information provided by OpenWeatherAPI.
-\item The User will be alerted when the national weather service has alerts for the searched location.
-\item The system will connect to the OpenWeatherAPI.
-\item The User will be able to put locations into folders.
+\item All weather information will be displayed to the user in the Window.
+\item The User will be able to switch between the two modes: Cartoon and Emoji.
 \item The User will be able to search for a location.
+\item The User will be prompted with a message box if the city entered does not exist.
 \end{itemize}
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item Privacy - The user's search locations will be protected and not given to any third parties.
-\item Reliability - The app will work with a proper internet connection.
-\item Capacity - The app will have the same capacity as the storage on the computer i.e. The user will be able to have as many locations as their phone or computer can fit. Also the API calls are limited to 1,000,000 calls per month.
+\item Privacy - The user's search locations will be protected by deleting the search locations after it is finished.
+\item Reliability - UltraWeather will work 100% of the time, as long as, UltraWeather can be connected the API.
+\item Capacity - UltraWeather will contain the capacity will be able to contain information about the current weather and a week after. Also the API calls are limited to 1,000,000 calls per month.
+\item The system will connect to the OpenWeatherAPI.
 \end{itemize}
 
 \subsection{Use Cases}
@@ -329,7 +329,7 @@ Feburary 5th: The requirements stage has been discussed and decided.
 March 1st: All designs are finished, shown through our use cases.
 March 29 - 31: Implementation starts with Andrew coding the system that connects to the API.
 April 5 - 12: Implementing the user interface designs shown through the use cases and implementing the location search function.
-April 14 - 21: Implementing other functions such as the tiling system and GPS optimal route searching functions
+April 14 - 21: Implementing other functions such as a ForecastPicChanger and functionality for switching modes.
 If time is available:
 April 19 - 26: Work on radar stretch goal.
 April 28: Verfication and testing of all different themes and functionality of the program.
@@ -354,9 +354,7 @@ We used a facade pattern and a vistor pattern. The facade pattern comes with the
 The UltraWeather collects data from OpenWeather API and displays it to the screen in a user friendly way. UltraWeather allows the person to type in a city and checks whether the city is valid. It provides an error MessageBox when it is not valid. The pictures will change when the weather is different, and the forecast will be as accurate as the API.
 
 \subsection{Future Work}
-Where are you going next with your project?
-For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
-By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
+We seek to implement the stretch goals and improve the efficiency of the program even further as our knowledge of computer science grows. Afterwards, we plan to put it on our resumes and forget about the specific details, but keep the knowledge we gained from teh process of finishing the project.
 
 
 
