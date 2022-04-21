@@ -216,7 +216,8 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \section{Scope}
-	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We want to take an information intensive approach giving the user all necessary information to plan out their day based on the weather. For our stretch goals, we want to implement severe weather alerts and implement a radar. The radar would be static and depict the radar at the current time only. 
+	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We plan to do this by
+	implementing themes that allow the user to change the look and feel of their application at any time. We also want to implement a radar system that can help users identify weather systems that may be approaching as a stretch goal.
 
 
 \subsection{Requirements}
@@ -262,40 +263,39 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 \item[Use Case Number:] 1
-\item[Use Case Name:] Set location
-\item[Description:] Upon opening the application, the user will have the option to set their current location, i.e. ``Use current location". The user will then be presented with the weather forecast for the provided location.
+\item[Use Case Name:] Searching for current weather and forecast for a location
+\item[Description:] Upon opening the application, the user will have the option to enter a city and state to get the weather for that location.
 \end{itemize}
 
 \begin{enumerate}
-\item If the user wishes the application to find their location, they will click on the alert that the application is trying to access their location.
-\item If the user wishes to set their home location manually, they can enter their zip code into a ``Set your location" menu option.
-\item[Termination Outcome:] The user now has access to their ``home" location's weather. Making it readily available whenever they access the application.
+\item If the user wishes the application to find the weather for a location thy can first enter the name of the city.
+\item After entering the name of the city, the user can select which state the city is located in.
+\item Once they have entered both the city and the state, the user can press the Go button to retrieve the information.  
+\item[Termination Outcome:] The application will display the current weather as well as the forecast for the week for that location.
 \end{enumerate}
 
 \begin{itemize}
 \item[Use Case Number:] 2
-\item[Use Case Name:] Add favorites
-\item[Description:] The user can store favorite places to readily see what the weather is for these saved locations. They will be collected all in one place.
-\end{itemize}
+\item[Use Case Name:] Entering a location that is not found
+\item[Description:] A message box appears that lets the user know that the city was not found. No information will change in the window.
 
 \begin{enumerate}
-\item The user will navigate to ``Add favorites" section.
-\item The user will type in the zip code for desired location.
-\item The user will have the option to save as a favorite to be readily available to view.
-\item[Termination Outcome:] A collection of saved favorite locations will be stored in the application.
+\item The user enters the name of the city for which they wish to get weather information.
+\item The user selects the state of the city they wish to gather weather information for. 
+\item[Termination Outcome:] A message box appears that let's the user know the city was not found. None of the weather data displayed in the window changes.
 \end{enumerate}
+
+\end{itemize}
 
 \begin{itemize}
 \item[Use Case Number:] 3
-\item[Use Case Name:] Search Location's weather
-\item[Description:] The user will have the option to search for a location's weather by location (zip code). The application will then show them the current weather forecast for the searched location. 
+\item[Use Case Name:] Changing the theme
+\item[Description:] The user will have the option to change the theme of the application. This will not change the functionality.
 \end{itemize}
 
 \begin{enumerate}
-\item The user will type in the desired City into the textbox and select a state from the combobox. Then they will press a button and the data will appear for that city.
-\item The application will present the current weather forecast.
-\item The user can search for new locations if desired. 
-\item[Termination Outcome:] The user can now interact with all features of the application regarding this location.
+\item The user wishes to change their theme. They select a theme from the list of available themes.
+\item[Termination Outcome:] The icons change for the application to reflect the theme that the user has selected. 
 \end{enumerate}
 
 \subsection{Interface Mockups}
@@ -320,7 +320,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \section{Project Timeline}
 \begin{figure}[ht !]
-\includegraphics[scale = 0.5]{Timeline.png}
+\includegraphics[scale = 0.3]{Timeline.png}
 \caption{Full Project Timeline}
 \label{TimeLine}
 \end{figure}
