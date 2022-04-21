@@ -141,7 +141,7 @@
 
 \begin{document}
 
-\title{Deliverable for UltraWeather\\ for UTM CSCI 352}
+\title{Deliverable for UltraWeather}
 %
 %
 
@@ -152,8 +152,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This computer application uses a weather API to collect certain weather data such as temperature, humidity, etc. to predict the weather forecast throughout 
-the day. The target audience are driving adults who need to know the weather conditions to get to work on time. The application will also have emergency notifications, such as tornado warnings. The progress on the project is that we have selected a specific API to collect weather data.
+This computer application uses a weather API to collect weather data for the current time as well as the forecast for the week. The target audience are driving adults who need to know the weather conditions to get to work or class on time. The application will also have emergency notifications, such as tornado warnings. Currently, the project is able to call the API and get the current weather. It also has switchable themes that can be changed at any time. 
 \end{abstract}
 
 }
@@ -171,9 +170,9 @@ the day. The target audience are driving adults who need to know the weather con
 
 
 \section{Introduction}
-\quad We planned this project as a way to practice our C\# and design pattern skills. Our hope is that in doing so we can deliver a product that is user friendly and well designed so that users will have an easy way to check the weather from their desktop. One advantage of this is that web browsers are often resource hungry and a small WPF app like ours will not be. This is crucial for low end systems where multitasking with a web-browser open slows everything to a crawl. We are really targeting power-users who would like to use as little resources as possible to track the weather for as many areas as they choose. It is often the case with weather apps that they quickly become cumbersome when used for more than a few cities/regions.
+\quad Our goal is to deliver a product that is user friendly and well designed so that users will have an easy way to check the weather from their desktop. One advantage of this is that web browsers are often resource hungry and a small WPF app like ours will not be. This is crucial for low end systems where multitasking with a web-browser open slows everything to a crawl. We are targeting power-users who would like to use as few resources as possible to track the weather. It is often the case with weather apps that they use far more resources than necessary.
 
-\quad Another issue we plan to tackle with this project is privacy. Weather applications by companies such as Apple almost certainly store your information on a server. Since most people keep not only the city they live in but the ones that they travel to pinned in these apps, Apple knows exactly where you live and where you go based off only in the information in this application. By storing this information client-side(and we plan to encrypt it) we give the user more security in how their data is stored. Closed ecosystems such as Apple's intentionally do not reveal exactly how they handle user information and this is not acceptable to everyone. We intend to be entirely transparent about how we handle your data since the project will be open-sourced once it is delivered. Even if our implementation ends up being imperfect or less secure than we hoped, at least we won't be hiding it.
+\quad Another issue we plan to tackle with this project is privacy. Weather applications by companies almost certainly store your information on a server. Since most people keep not only the city they live in but the ones that they travel to pinned in these apps, companies know exactly where you live and where you go based off only  the information in this application. We plan to store information client-side to give the user more security in how their data is stored. Closed ecosystems  intentionally do not reveal exactly how they handle user information and this is not acceptable to everyone. We intend to be entirely transparent about how we handle your data since the project will be open-sourced once it is delivered. Even if our implementation ends up being imperfect or less secure than we hoped, at least we won't be hiding it.
 
 
 %Your introduction should give an introduction to your project.  What are you trying to %accomplish (high level), who do you expect to target with your project?  What do you expect %your target audience will get out of it?
@@ -198,8 +197,8 @@ the day. The target audience are driving adults who need to know the weather con
 
 \subsection{Background}
 \subsubsection{Terms to Know}
-	The reader should be familiar with the general terms used to refer to various weather patterns. We plan to use a tiling system for this project. A tile in the context of our program will be a drag-able object that contains information on the weather for specific city or town.
-You will be able to organize these tiles with folders, which are simply containers for tiles. 
+	The reader should be familiar with the general terms used to refer to various weather patterns. We plan to use a theme system for this project. A theme in the context of our program will be a change of icons that represent the current weather for a given day.
+The user should also be familiar with the imperial system, as our program will provide the requested data in this form.
 \subsubsection{Personal Connection}	
 	 We came up with the idea for this project because most weather apps are integrated into operating systems and as such they have limited functionality for users who may travel between large areas or are simply interested in following the weather on a large scale. One strong inspiration was the recently unpredictable weather in Tennessee. It would be good for users working on the desktop to be able to check the weather as they work with a simple and fast app that does not run as a system service. 
 %In this section, give a brief background to any concepts the reader may need to know to make it %through your paper.   Are there any specific terms the reader needs to be familiar with?
@@ -213,7 +212,7 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \subsection{Challenges}
-	The first major challenge will be getting a C\# WPF application to interact with the OpenWeather API. Once we can call the api and receive data the next major challenge will be organizing this data into something that is easy for the user to view and interpret. After that we will have to overcome the task of implementing 'tiles' that allow the user to organize more than one location's data. We plan to overcome the challenges by first reading the XML data into variables that can be married to fields in the tiles. Getting the data organized into something that is pleasant to view and organize will be by far the biggest challenge of this project. The free tier of OpenWeather does have certain limitations
+	The first major challenge will be getting our C\# WPF application to interact with the OpenWeather API. Once we can call the API and receive data the next major challenge will be organizing this data into something that is easy for the user to view and interpret. After that we will have to overcome the task of implementing ''themes'' that allow the user to organize more than one location's data. We plan to overcome the challenges by first reading the XML data from the API into variables that can be placed at various locations in the window. Getting the data organized into something that is pleasant to view and organize will be by far the biggest challenge of this project. The free tier of OpenWeather limits us to a certain amount of calls, and does not allow us access to data beyond current weather and forecast.
 
 
 \section{Scope}
