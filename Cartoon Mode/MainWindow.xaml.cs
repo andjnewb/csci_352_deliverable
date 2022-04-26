@@ -25,8 +25,12 @@ namespace Cartoon_Mode
         API_Container container;
         City forecastCity;
         API_Container forecastContainer;
-
-        public MainWindow()
+        public static MainWindow Instance { get; private set; }
+        static MainWindow()
+        {
+            Instance = new MainWindow();
+        }
+        private MainWindow()
         {
             InitializeComponent();
             CityText.Text = "Martin";
