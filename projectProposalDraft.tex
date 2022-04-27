@@ -141,7 +141,7 @@
 
 \begin{document}
 
-\title{UltraWeather}
+\title{Deliverable for UltraWeather}
 %
 %
 
@@ -152,7 +152,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This application uses the OpenWeatherAPI to collect weather data for the current time as well as the forecast for the week for a specific city in a state. The target audience are driving adults and students who need to know the weather conditions to get to work or class on time. UltraWeather is able to call the API and get the current weather and forecasting weather for up to a week. It also has switchable themes that can be changed at any time. 
+This computer application uses a weather API to collect weather data for the current time as well as the forecast for the week. The target audience are driving adults who need to know the weather conditions to get to work or class on time. The application will also have emergency notifications, such as tornado warnings. Currently, the project is able to call the API and get the current weather. It also has switchable themes that can be changed at any time. 
 \end{abstract}
 
 }
@@ -216,8 +216,12 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \section{Scope}
+<<<<<<< HEAD
+	We understand that in 2022, most weather apps have the same features we come to expect. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We want to take a minimalist, tile approach to our app. We also want to implement our radar. Whether we will have it dynamic (a looping map) or static is still to be decided. For our stretch goals, we want to implement severe weather alerts and also "pre-alerts". For the pre-alerts, the idea is to give users a heads-up alert up to a week before severe weather occurs. For example, if meteorologists are predicting a nasty storm front next week, the user should be alerted that there is the possibility for severe weather. Sometimes, just a tornado warning pushed to your phone as the storm is happening is too late to seek shelter.
+=======
 	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We plan to do this by
 	implementing themes that allow the user to change the look and feel of their application at any time. We also want to implement a radar system that can help users identify weather systems that may be approaching as a stretch goal.
+>>>>>>> 6f6129df19eaffd0b97d91e37f16789f914a8fba
 
 
 \subsection{Requirements}
@@ -226,18 +230,18 @@ The requirements were acquired with all of us talking in class about the functio
 \subsubsection{Functional}
 \begin{itemize}
 \item The User should have the ability to pick what location they want to get the weather from -- allows the User to get particular information for their use.
-\item All weather information will be displayed to the user in the Window.
-\item The User will be able to switch between the two modes: Cartoon and Emoji.
+\item The User will be able to see all weather information provided by OpenWeatherAPI.
+\item The User will be alerted when the national weather service has alerts for the searched location.
+\item The system will connect to the OpenWeatherAPI.
+\item The User will be able to put locations into folders.
 \item The User will be able to search for a location.
-\item The User will be prompted with a message box if the city entered does not exist.
 \end{itemize}
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item Privacy - The user's search locations will be protected by deleting the search locations after it is finished.
-\item Reliability - UltraWeather will work 100% of the time, as long as, UltraWeather can be connected the API.
-\item Capacity - UltraWeather will contain the capacity will be able to contain information about the current weather and a week after. Also the API calls are limited to 1,000,000 calls per month.
-\item The system will connect to the OpenWeatherAPI.
+\item Privacy - The user's search locations will be protected and not given to any third parties.
+\item Reliability - The app will work with a proper internet connection.
+\item Capacity - The app will have the same capacity as the storage on the computer i.e. The user will be able to have as many locations as their phone or computer can fit. Also the API calls are limited to 1,000,000 calls per month.
 \end{itemize}
 
 \subsection{Use Cases}
@@ -300,20 +304,20 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \subsection{Interface Mockups}
 \begin{figure}[ht!]
-\includegraphics[scale=0.3]{use_case_1.png}
-\caption{Illustration of Use Case 1. Here the user is choosing whether or not to automatically obtain their location.}
+\includegraphics[scale=0.1]{use_case_1.png}
+\caption{Illustration of Use Case 1. Here the user has entered a city and state and retrieved the weather information for said location.}
 \label{use_case_1}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[scale=0.3]{use_case_2.png}
-\caption{Illustration of Use Case 2. Here the user is adding a favorite to their favorites folder.}
+\includegraphics[scale=0.1]{use_case_2.png}
+\caption{Illustration of Use Case 2. Here the has entered a city that could not be found in their chosen state.}
 \label{use_case_2}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[scale=0.3]{use_case_3.png}
-\caption{Illustration of Use Case 3. Here the user is searching for a location.}
+\includegraphics[scale=0.1]{use_case_3.png}
+\caption{Illustration of Use Case 3. Here the user has changed the theme.}
 \label{use_case_3}
 \end{figure}
 
@@ -329,7 +333,7 @@ Feburary 5th: The requirements stage has been discussed and decided.
 March 1st: All designs are finished, shown through our use cases.
 March 29 - 31: Implementation starts with Andrew coding the system that connects to the API.
 April 5 - 12: Implementing the user interface designs shown through the use cases and implementing the location search function.
-April 14 - 21: Implementing other functions such as a ForecastPicChanger and functionality for switching modes.
+April 14 - 21: Implementing other functions such as the tiling system and GPS optimal route searching functions
 If time is available:
 April 19 - 26: Work on radar stretch goal.
 April 28: Verfication and testing of all different themes and functionality of the program.
@@ -337,25 +341,29 @@ Maintance will be taking place in the future as well as during development as pr
 
 \subsection{UML Outline}
 \begin{figure}[ht!]
-\includegraphics[scale = 0.3]{WeatherApp.png}
+\includegraphics[scale = 0.3]{facade_pattern_UltraWeather_modified.png}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[scale=0.3]{Singleton_Pattern_UltraWeather.png}
 \end{figure}
 
 \section{Project Structure}
-We haven't decided on all of design patterns yet but we feel that the factory method would be good for the tile system we plan to implement. Each factory will be responsible for producing different types of tile, depending on what the users wants. We also need to come up with some more tile types to make the project more useful and compelling to use.
+The program is structured around the API Container. The Go button acts as a facade for the complex API call that happens once the user enters their city and selects their state. The program uses part of the visitor pattern for themes. All of the data is contained in a temporary City struct that will be destroyed once the data has been given to the relevant fields. This ensures a minimum usage of resources.
+The MainWindow class contains the functions for every button and list in our program window, which it uses mainly to access the API Container's call api functions.
 
 
 
 
 \subsection{Design Patterns Used}
-We used a facade pattern and a singleton pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot touch anything on the backend. The singleton design pattern was used to make the MainWindow only been initialized once.
+We used a facade pattern and a visitor pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot access anything in the back end. The singleton pattern is used to for the main window, and it fits well because there is only one window and it is globally accessible. 
+
 
 \section{Results}
 The UltraWeather collects data from OpenWeather API and displays it to the screen in a user friendly way. UltraWeather allows the person to type in a city and checks whether the city is valid. It provides an error MessageBox when it is not valid. The pictures will change when the weather is different, and the forecast will be as accurate as the API.
 
 \subsection{Future Work}
 We seek to implement the stretch goals and improve the efficiency of the program even further as our knowledge of computer science grows. Afterwards, we plan to put it on our resumes and forget about the specific details, but keep the knowledge we gained from teh process of finishing the project.
-
-
 
 
 \begin{thebibliography}{1}
