@@ -152,7 +152,7 @@
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This computer application uses a weather API to collect weather data for the current time as well as the forecast for the week. The target audience are driving adults who need to know the weather conditions to get to work or class on time. The application will also have emergency notifications, such as tornado warnings. Currently, the project is able to call the API and get the current weather. It also has switchable themes that can be changed at any time. 
+This application uses the OpenWeatherAPI to collect weather data for the current time as well as the forecast for the week for a specific city in a state. The target audience are driving adults and students who need to know the weather conditions to get to work or class on time. UltraWeather is able to call the API and get the current weather and forecasting weather for up to a week. It also has switchable themes that can be changed at any time. 
 \end{abstract}
 
 }
@@ -216,7 +216,7 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \section{Scope}
-	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We want to take an information intensive approach giving the user all necessary information to plan out their day based on the weather. For our stretch goals, we want to implement severe weather alerts and implement a radar. The radar would be static and depict the radar at the current time only.
+	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We plan to do this by implementing themes that allow the user to change the look and fdeel of their application at any time. We also want to implement a radar system that can help users identify weather systems that may be approaching as well as implementing severe weather alerts as a stretch goals.
 
 
 \subsection{Requirements}
@@ -328,7 +328,7 @@ Feburary 5th: The requirements stage has been discussed and decided.
 March 1st: All designs are finished, shown through our use cases.
 March 29 - 31: Implementation starts with Andrew coding the system that connects to the API.
 April 5 - 12: Implementing the user interface designs shown through the use cases and implementing the location search function.
-April 14 - 21: Implementing other functions such as the tiling system and GPS optimal route searching functions
+April 14 - 21: Implementing other functions such as a ForecastPicChangerand functionality for switching modes.
 If time is available:
 April 19 - 26: Work on radar stretch goal.
 April 28: Verfication and testing of all different themes and functionality of the program.
@@ -351,8 +351,7 @@ The MainWindow class contains the functions for every button and list in our pro
 
 
 \subsection{Design Patterns Used}
-We used a facade pattern and a visitor pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot access anything in the back end. The singleton pattern is used to for the main window, and it fits well because there is only one window and it is globally accessible. 
-
+We used a facade pattern and a singleton pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot touch anything on the backend. The singleton design pattern was used to make the MainWindow only been initialized once.
 
 \section{Results}
 The UltraWeather collects data from OpenWeather API and displays it to the screen in a user friendly way. UltraWeather allows the person to type in a city and checks whether the city is valid. It provides an error MessageBox when it is not valid. The pictures will change when the weather is different, and the forecast will be as accurate as the API.
