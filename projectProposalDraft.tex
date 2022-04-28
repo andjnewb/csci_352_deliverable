@@ -316,6 +316,19 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \label{use_case_3}
 \end{figure}
 
+\subsection{UML Outline}
+\begin{figure}[ht!]
+\includegraphics[scale = 0.3]{facade_pattern_UltraWeather_modified.png}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[scale=0.3]{Singleton_Pattern_UltraWeather.png}
+\end{figure}
+
+\section{Project Structure}
+The program is structured around the API Container. The Go button acts as a facade for the complex API call that happens once the user enters their city and selects their state. The program uses part of the visitor pattern for themes. All of the data is contained in a temporary City struct that will be destroyed once the data has been given to the relevant fields. This ensures a minimum usage of resources.
+The MainWindow class contains the functions for every button and list in our program window, which it uses mainly to access the API Container's call api functions.
+
 
 \section{Project Timeline}
 \begin{figure}[ht !]
@@ -333,20 +346,6 @@ If time is available:
 April 19 - 26: Work on radar stretch goal.
 April 28: Verfication and testing of all different themes and functionality of the program.
 Maintance will be taking place in the future as well as during development as problems arise.
-
-\subsection{UML Outline}
-\begin{figure}[ht!]
-\includegraphics[scale = 0.3]{facade_pattern_UltraWeather_modified.png}
-\end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[scale=0.3]{Singleton_Pattern_UltraWeather.png}
-\end{figure}
-
-\section{Project Structure}
-The program is structured around the API Container. The Go button acts as a facade for the complex API call that happens once the user enters their city and selects their state. The program uses part of the visitor pattern for themes. All of the data is contained in a temporary City struct that will be destroyed once the data has been given to the relevant fields. This ensures a minimum usage of resources.
-The MainWindow class contains the functions for every button and list in our program window, which it uses mainly to access the API Container's call api functions.
-
 
 
 
