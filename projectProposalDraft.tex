@@ -59,6 +59,7 @@
 
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{float}
 \setlist[itemize]{leftmargin=3 cm}
 \setlist[enumerate]{leftmargin=3cm}
 
@@ -298,40 +299,50 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \end{enumerate}
 
 \subsection{Interface Mockups}
-\begin{figure}[ht!]
-\includegraphics[scale=0.1]{use_case_1.png}
+\begin{figure}[H]
+\includegraphics[scale=0.3]{use_case_1.png}
 \caption{Illustration of Use Case 1. Here the user has entered a city and state and retrieved the weather information for said location.}
 \label{use_case_1}
 \end{figure}
 
-\begin{figure}[ht!]
-\includegraphics[scale=0.1]{use_case_2.png}
+\begin{figure}[H]
+\includegraphics[scale=0.3]{use_case_2.png}
 \caption{Illustration of Use Case 2. Here the has entered a city that could not be found in their chosen state.}
 \label{use_case_2}
 \end{figure}
 
-\begin{figure}[ht!]
-\includegraphics[scale=0.1]{use_case_3.png}
+\begin{figure}[H]
+\includegraphics[scale=0.3]{use_case_3.png}
 \caption{Illustration of Use Case 3. Here the user has changed the theme.}
 \label{use_case_3}
 \end{figure}
 
-\subsection{UML Outline}
-\begin{figure}[ht!]
-\includegraphics[scale = 0.3]{facade_pattern_UltraWeather_modified.png}
-\end{figure}
 
-\begin{figure}[ht!]
-\includegraphics[scale=0.3]{Singleton_Pattern_UltraWeather.png}
-\end{figure}
-
+\pagebreak
 \section{Project Structure}
 The program is structured around the API Container. The Go button acts as a facade for the complex API call that happens once the user enters their city and selects their state. The program uses part of the visitor pattern for themes. All of the data is contained in a temporary City struct that will be destroyed once the data has been given to the relevant fields. This ensures a minimum usage of resources.
 The MainWindow class contains the functions for every button and list in our program window, which it uses mainly to access the API Container's call api functions.
 
+\subsection{UML Outline}
+\begin{figure}[H]
+\includegraphics[scale = 0.5]{facade_pattern_UltraWeather_modified.png}
+\caption{Facade Pattern used in UltraWeather}
+\label{fig:Facade Pattern}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{Singleton_Pattern_UltraWeather.png}
+\caption{Singleton Pattern used in UltraWeather}
+\label{fig:Singleton Pattern}
+\end{figure}
+
+
+
+
+
 
 \section{Project Timeline}
-\begin{figure}[ht !]
+\begin{figure}[ht!]
 \includegraphics[scale = 0.3]{Timeline.png}
 \caption{Full Project Timeline}
 \label{TimeLine}
@@ -392,4 +403,3 @@ Biography text here.
 
 % that's all folks
 \end{document}
-
