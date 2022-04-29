@@ -142,18 +142,18 @@
 
 \begin{document}
 
-\title{Deliverable for UltraWeather}
+\title{UltraWeather}
 %
 %
 
 % received ..."  text while in non-compsoc journals this is reversed. Sigh.
 
-\author{Andrew Newbill, Joshua Chamberlain, Aaron Alden\\ % <-this % stops a space
+\author{Andrew Newbill, Joshua Chamberlain\\ % <-this % stops a space
 }
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-This application uses the OpenWeatherAPI to collect weather data for the current time as well as the forecast for the week for a specific city in a state. The target audience are driving adults and students who need to know the weather conditions to get to work or class on time. UltraWeather is able to call the API and get the current weather and forecasting weather for up to a week. It also has switchable themes that can be changed at any time. 
+This application uses the OpenWeatherAPI to collect weather data for the current time as well as the forecast for the week for a specific city in a state and displays to users in an easy to read manner. The target audience is students who need to know the weather conditions to get to work or class on time. UltraWeather is able to call the API and get the current weather and forecasting weather for up to a week. It also has switchable themes that can be changed at any time.
 \end{abstract}
 
 }
@@ -217,11 +217,11 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \section{Scope}
-	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We plan to do this by implementing themes that allow the user to change the look and fdeel of their application at any time. We also want to implement a radar system that can help users identify weather systems that may be approaching as well as implementing severe weather alerts as a stretch goals.
+	We understand that in 2022, most weather apps have the same features such as temperature and humidity. The main way we can make our app different is by focusing more on the aesthetics and graphics of the app. We plan to do this by implementing themes that allow the user to change the look and feel of their application at any time. We also want to implement a radar system that can help users identify weather systems that may be approaching as well as implementing severe weather alerts as a stretch goals.
 
 
 \subsection{Requirements}
-The requirements were acquired with all of us talking in class about the function and non-functional requirements as well as further communication through discord about both types of requirements.
+We acquired the requirements by all of us talking in class about functional and non-functional requirements as well as further comminication through discord about both types of requirements.
 
 \subsubsection{Functional}
 \begin{itemize}
@@ -234,7 +234,7 @@ The requirements were acquired with all of us talking in class about the functio
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item Privacy - The user's search locations will be protected by deleting the search locations after it is finished.
+\item Privacy - The user's search locations will be protected and not be given to any third parties besides OpenWeather API.
 \item Reliability - UltraWeather will work 100% of the time, as long as, UltraWeather can be connected the API.
 \item Capacity - UltraWeather will contain the capacity will be able to contain information about the current weather and a week after. Also the API calls are limited to 1,000,000 calls per month.
 \item The system will connect to the OpenWeatherAPI.
@@ -348,58 +348,27 @@ The MainWindow class contains the functions for every button and list in our pro
 \label{TimeLine}
 \end{figure}
 Milestones:
-Feburary 5th: The requirements stage has been discussed and decided.
-March 1st: All designs are finished, shown through our use cases.
-March 29 - 31: Implementation starts with Andrew coding the system that connects to the API.
-April 5 - 12: Implementing the user interface designs shown through the use cases and implementing the location search function.
-April 14 - 21: Implementing other functions such as a ForecastPicChangerand functionality for switching modes.
-If time is available:
-April 19 - 26: Work on radar stretch goal.
-April 28: Verfication and testing of all different themes and functionality of the program.
-Maintance will be taking place in the future as well as during development as problems arise.
-
+\begin{itemize}
+\item Feburary 5th: The requirements stage has been discussed and decided.
+\item March 1st: All designs are finished, shown through our use cases.
+\item March 29 - 31: Implementation starts with Andrew coding the system that connects to the API.
+\item April 5 - 12: Implementing the user interface designs shown through the use cases and implementing the location search function.
+\item April 14 - 21: Implementing other functions such as a ForecastPicChangerand functionality for switching modes.
+\item If time is available:
+\item April 19 - 26: Work on radar stretch goal.
+\item April 28: Verfication and testing of all different themes and functionality of the program.
+\item Maintenance will be taking place in the future as well as during development as problems arise.
+\end{itemize}
 
 
 \subsection{Design Patterns Used}
-We used a facade pattern and a singleton pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot touch anything on the backend. The singleton design pattern was used to make the MainWindow only b initialized once.
+We used a facade pattern and a singleton pattern. The facade pattern comes with the user interface. The user interface is set up in a way that the user can provide information to the system, but they cannot touch anything on the backend. The singleton design pattern was used to make the MainWindow only be initialized once.
 
 \section{Results}
-The UltraWeather collects data from OpenWeather API and displays it to the screen in a user friendly way. UltraWeather allows the person to type in a city and checks whether the city is valid. It provides an error MessageBox when it is not valid. The pictures will change when the weather is different, and the forecast will be as accurate as the API.
+The layout of UltraWeather is very information intensive as intended. It displays multiple weather attributes, such as humidity, visibility, and the 7 day forecast in two different themes. Unfortunately, the stretch goals of radar and the severe weather alerts were not implemented due to time constraints.
 
 \subsection{Future Work}
-We seek to implement the stretch goals and improve the efficiency of the program even further as our knowledge of computer science grows. Afterwards, we plan to put it on our resumes and forget about the specific details, but keep the knowledge we gained from teh process of finishing the project.
-
-
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
-
-
-
-\begin{IEEEbiography}{Michael Shell}
-Biography text here.
-\end{IEEEbiography}
-
-% if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
-
-% insert where needed to balance the two columns on the last page with
-% biographies
-%\newpage
-
-\begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
-
-
-
-
+We seek to implement the stretch goals such as implementing a radar and improve the efficiency of the program even further as our knowledge of computer science grows. The prioritization of the stretch goals goes implementing the radar, adding severe weather alerts, and adding new themes. Afterwards, we plan to put it on our resumes and forget about the specific details, but keep the knowledge we gained from the process of finishing the project.
 
 % that's all folks
 \end{document}
