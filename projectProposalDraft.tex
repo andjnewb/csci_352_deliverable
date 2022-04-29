@@ -171,9 +171,9 @@ This application uses the OpenWeatherAPI to collect weather data for the current
 
 
 \section{Introduction}
-\quad Our goal is to deliver a product that is user friendly and well designed so that users will have an easy way to check the weather from their desktop. One advantage of this is that web browsers are often resource hungry and a small WPF app like ours will not be. This is crucial for low end systems where multitasking with a web-browser open slows everything to a crawl. We are targeting power-users who would like to use as few resources as possible to track the weather. It is often the case with weather apps that they use far more resources than necessary.
+\quad Our goal is to deliver a product that is user friendly and well designed so that users have an easy way to check the weather from their desktop. One advantage of this is that web browsers are often resource hungry and a small WPF app like ours isn't. This is crucial for low end systems where multitasking with a web-browser open slows everything to a crawl. We are targe power-users who would like to use as few resources as possible to track the weather. It is often the case with weather apps that they use far more resources than necessary.
 
-\quad Another issue we plan to tackle with this project is privacy. Weather applications by companies almost certainly store your information on a server. Since most people keep not only the city they live in but the ones that they travel to pinned in these apps, companies know exactly where you live and where you go based off only  the information in this application. We plan to store information client-side to give the user more security in how their data is stored. Closed ecosystems  intentionally do not reveal exactly how they handle user information and this is not acceptable to everyone. We intend to be entirely transparent about how we handle your data since the project will be open-sourced once it is delivered. Even if our implementation ends up being imperfect or less secure than we hoped, at least we won't be hiding it.
+\quad Another issue we tackle with this project is privacy. Weather applications by companies almost certainly store your information on a server. Since most people keep not only the city they live in but the ones that they travel to pinned in these apps, companies know exactly where you live and where you go based off only  the information in this application. We store information client-side to give the user more security in how their data is stored. Closed ecosystems  intentionally do not reveal exactly how they handle user information and this is not acceptable to everyone. We intend to be entirely transparent about how we handle your data since the project is open-source. Even if our implementation is imperfect or less secure, at least aren't hiding it.
 
 
 %Your introduction should give an introduction to your project.  What are you trying to %accomplish (high level), who do you expect to target with your project?  What do you expect %your target audience will get out of it?
@@ -213,7 +213,7 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \subsection{Challenges}
-	The first major challenge will be getting our C\# WPF application to interact with the OpenWeather API. Once we can call the API and receive data the next major challenge will be organizing this data into something that is easy for the user to view and interpret. After that we will have to overcome the task of implementing ''themes'' that allow the user to organize more than one location's data. We plan to overcome the challenges by first reading the XML data from the API into variables that can be placed at various locations in the window. Getting the data organized into something that is pleasant to view and organize will be by far the biggest challenge of this project. The free tier of OpenWeather limits us to a certain amount of calls, and does not allow us access to data beyond current weather and forecast.
+	The first major challenge was getting our C\# WPF application to interact with the OpenWeather API. Once we could the API and receive data the next major challenge was organizing this data into something that is easy for the user to view and interpret. After that we had to overcome the task of implementing ''themes'' that allow the user to organize more than one location's data. We  overcame these challenges by first reading the XML data from the API into variables that can be placed at various locations in the window. Getting the data organized into something that is pleasant to view and organize was by far the biggest challenge of this project. The free tier of OpenWeather limits us to a certain amount of calls, and does not allow us access to data beyond current weather and forecast.
 
 
 \section{Scope}
@@ -221,7 +221,7 @@ We hope that our project we impact the safety of its users in a positive way. A 
 
 
 \subsection{Requirements}
-We acquired the requirements by all of us talking in class about functional and non-functional requirements as well as further comminication through discord about both types of requirements.
+We decided on the requirements by  talking in class about functional and non-functional requirements, as well as further communication through discord about both types of requirements.
 
 \subsubsection{Functional}
 \begin{itemize}
@@ -278,14 +278,14 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \item[Use Case Number:] 2
 \item[Use Case Name:] Entering a location that is not found
 \item[Description:] A message box appears that lets the user know that the city was not found. No information will change in the window.
-
+\end{itemize}
 \begin{enumerate}
 \item The user enters the name of the city for which they wish to get weather information.
 \item The user selects the state of the city they wish to gather weather information for. 
 \item[Termination Outcome:] A message box appears that let's the user know the city was not found. None of the weather data displayed in the window changes.
 \end{enumerate}
 
-\end{itemize}
+
 
 \begin{itemize}
 \item[Use Case Number:] 3
@@ -326,13 +326,13 @@ The MainWindow class contains the functions for every button and list in our pro
 \subsection{UML Outline}
 \begin{figure}[H]
 \includegraphics[scale = 0.5]{facade_pattern_UltraWeather_modified.png}
-\caption{Facade Pattern used in UltraWeather}
+\caption{This is the facade pattern used in UltraWeather. The button is the facade for the complex API call that happens behind the scenes when the user presses the go button.}
 \label{fig:Facade Pattern}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.5]{Singleton_Pattern_UltraWeather.png}
-\caption{Singleton Pattern used in UltraWeather}
+\caption{This is the singleton pattern used in UltraWeather. The main program window is singleton, which means that it is globally accessible and there exists only one window.}
 \label{fig:Singleton Pattern}
 \end{figure}
 
